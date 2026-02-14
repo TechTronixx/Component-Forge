@@ -21,9 +21,7 @@ It's just a fast way to prototype UI styles and get the code you need without se
 - **Dynamic Theming:** Switch between multiple archetypes (Modern, Retro, Brutalist, etc.).
 - **Component Library:** Pre-built, customizable UI components (Buttons, Inputs, Cards).
 - **Live Preview:** Real-time visualization of theme changes.
-- **Code Export:** Generate production-ready React/HTML & Tailwind code.
 - **Interactive Controls:** Fine-tune border radius, density, and colors.
-- **Responsive Design:** Mobile-friendly layouts and components.
 
 ## Getting Started
 
