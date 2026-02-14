@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Fonts ── */
+  --font-display: "Outfit", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "Playfair Display", serif;
+  --font-retro: "VT323", monospace;
+  --font-cyber: "Share Tech Mono", monospace;
+  --font-spatial: "Space Mono", monospace;
+  --font-academic: "Crimson Pro", serif;
+  --font-round: "Quicksand", sans-serif;
+
+  /* ── Brand Colors (static tokens) ── */
+  --color-forge-black: #0a0a0f;
+  --color-forge-dark: #111118;
+  --color-forge-panel: #16161e;
+  --color-forge-border: #2a2a3a;
+  --color-forge-muted: #6b6b80;
+  --color-forge-text: #e4e4ed;
+  --color-forge-white: #fafafe;
+  --color-brand: #6366f1;
+  --color-brand-secondary: #4f46e5;
+
+  /* ── Radius Tokens ── */
+  --radius-theme-none: 0px;
+  --radius-theme-sm: 4px;
+  --radius-theme-md: 8px;
+  --radius-theme-lg: 16px;
+  --radius-theme-xl: 24px;
+  --radius-theme-full: 9999px;
+
+  /* ── Easing ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Dynamic Theme Variables (overridden by JS) ── */
+:root {
+  --color-primary: #6366f1;
+  --color-secondary: #f163d2;
+  --color-accent: #63f1a5;
+  --color-surface: #1e1e2e;
+  --color-surface-dark: #0f0f1a;
+}
+
+/* ── Base Styles ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-forge-black);
+  color: var(--color-forge-text);
+  line-height: 1.6;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-forge-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-forge-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forge-muted);
+}
+
+/* ── Noise Overlay Utility ── */
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--color-brand);
+  color: white;
+}
