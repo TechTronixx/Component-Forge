@@ -154,7 +154,7 @@ export default function Landing() {
           Generate UI.
           <br />
           <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)] bg-clip-text text-transparent">
-            Not Regret.
+            With ease!
           </span>
         </motion.h1>
 
@@ -162,8 +162,8 @@ export default function Landing() {
           variants={fadeUp}
           className="max-w-xl mx-auto text-base md:text-lg text-[var(--color-forge-muted)] leading-relaxed mb-10"
         >
-          Pick a vibe. Tune the details. Export 32 production-ready Tailwind
-          components as React or HTML. Zero config. Full control.
+          A curated engine for crafting production-ready UI. Select an
+          aesthetic. Refine the parameters. Export clean code.
         </motion.p>
 
         <motion.div
