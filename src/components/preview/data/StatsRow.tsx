@@ -6,26 +6,32 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Users, TrendingUp, Eye, DollarSign } from "lucide-react";
+import ForgeIcon from "../../ui/ForgeIcon";
 
 const STATS = [
   {
-    icon: Users,
+    icon: "solar:users-group-rounded-bold-duotone",
     label: "Total Users",
     value: "24.5K",
     change: "+12.3%",
     up: true,
   },
   {
-    icon: TrendingUp,
+    icon: "solar:graph-up-bold-duotone",
     label: "Revenue",
     value: "$84.2K",
     change: "+8.1%",
     up: true,
   },
-  { icon: Eye, label: "Page Views", value: "142K", change: "-2.4%", up: false },
   {
-    icon: DollarSign,
+    icon: "solar:eye-bold-duotone",
+    label: "Page Views",
+    value: "142K",
+    change: "-2.4%",
+    up: false,
+  },
+  {
+    icon: "solar:dollar-bold-duotone",
     label: "Avg. Order",
     value: "$38.50",
     change: "+5.7%",
@@ -56,13 +62,13 @@ export default function StatsRow() {
         clsx("grid grid-cols-2 md:grid-cols-4 gap-3 w-full", font),
       )}
     >
-      {STATS.map(({ icon: Icon, label, value, change, up }) => (
+      {STATS.map(({ icon, label, value, change, up }) => (
         <div
           key={label}
           className={twMerge(clsx(classes.card, padding, "space-y-2"))}
         >
           <div className="flex items-center justify-between">
-            <Icon className="w-5 h-5 text-[var(--color-primary)]" />
+            <ForgeIcon icon={icon} className="w-5 h-5 text-(--color-primary)" />
             <span
               className={`text-xs font-medium ${up ? "text-emerald-400" : "text-red-400"}`}
             >

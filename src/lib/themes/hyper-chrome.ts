@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { Disc } from "lucide-react";
+
 
 export const hyperChrome: ThemeDefinition = {
   id: "hyper-chrome",
   label: "Hyper-Chrome",
   description: "Y2K liquid metal aesthetic",
-  icon: Disc,
+  icon: "solar:play-circle-bold-duotone",
   font: "var(--font-display)",
   generate: ({ radius }: ThemeParams) => ({
     wrapper: `bg-black text-white p-6 [background-image:linear-gradient(to_bottom,rgb(20,20,30),rgb(0,0,0))]`,

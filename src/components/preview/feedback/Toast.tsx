@@ -1,8 +1,9 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import { generateThemeClasses, getFont } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { CheckCircle, X, AlertTriangle, Info } from "lucide-react";
+
 
 const TOASTS = [
   {
@@ -58,7 +59,7 @@ export default function Toast() {
             {message}
           </span>
           <button className="text-[var(--color-forge-muted)] hover:text-white cursor-pointer transition-colors">
-            <X className="w-3.5 h-3.5" />
+            <ForgeIcon icon="solar:close-circle-bold" className="w-3.5 h-3.5" />
           </button>
         </div>
       ))}

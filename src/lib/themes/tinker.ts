@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Shapes } from "lucide-react";
+
 
 export const tinker: ThemeDefinition = {
   id: "tinker",
   label: "Tinker",
   description: "Claymorphic, tactile, friendly",
-  icon: Shapes,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-round)",
   generate: () => {
     // Claymorphism relies on high rounding (squarcles) and inner shadows

@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Radar } from "lucide-react";
+
 
 export const navigator: ThemeDefinition = {
   id: "navigator",
   label: "Navigator",
   description: "HUD telemetry interface",
-  icon: Radar,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-cyber)",
   generate: () => ({
     wrapper: `bg-[#050505] text-[#00ff41] border border-[#00ff41]/30 p-4 relative overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(rgba(0,255,65,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,65,0.03)_1px,transparent_1px)] before:bg-[size:20px_20px]`,

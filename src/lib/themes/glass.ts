@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { Gem } from "lucide-react";
+
 
 export const glass: ThemeDefinition = {
   id: "glass",
   label: "Glass",
   description: "Frosted glass aesthetic with blur effects",
-  icon: Gem,
+  icon: "solar:gem-bold-duotone",
   font: "var(--font-body)",
   generate: ({ radius, shadow }: ThemeParams) => ({
     wrapper: `bg-white/5 backdrop-blur-xl ${radius} ${shadow} border border-white/10`,

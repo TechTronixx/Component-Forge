@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Check, Zap } from "lucide-react";
+
 
 const PLANS = [
   {
@@ -90,7 +91,7 @@ export default function PricingCard() {
                 ),
               )}
             >
-              <Zap className="w-3 h-3" /> Popular
+              <ForgeIcon icon="solar:bolt-bold" className="w-3 h-3" /> Popular
             </span>
           )}
           <div>
@@ -117,7 +118,7 @@ export default function PricingCard() {
                   clsx(classes.text, "flex items-center gap-2 text-sm"),
                 )}
               >
-                <Check className="w-4 h-4 text-[var(--color-primary)] shrink-0" />
+                <ForgeIcon icon="solar:check-read-bold" className="w-4 h-4 text-[var(--color-primary)] shrink-0" />
                 {f}
               </li>
             ))}

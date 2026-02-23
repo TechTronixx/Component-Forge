@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { CaseSensitive } from "lucide-react";
+
 
 export const typographic: ThemeDefinition = {
   id: "typographic",
   label: "Typographic",
   description: "Structure defined by massive text",
-  icon: CaseSensitive,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-display)",
   generate: () => ({
     wrapper: `bg-white text-black p-8 relative overflow-hidden`,

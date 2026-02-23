@@ -1,8 +1,9 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import { generateThemeClasses, getFont } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Home } from "lucide-react";
+
 
 export default function NotFoundPage() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -45,7 +46,7 @@ export default function NotFoundPage() {
           ),
         )}
       >
-        <Home className="w-4 h-4" />
+        <ForgeIcon icon="solar:home-2-bold" className="w-4 h-4" />
         Back to Home
       </button>
     </div>

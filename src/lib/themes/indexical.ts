@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Scan } from "lucide-react";
+
 
 export const indexical: ThemeDefinition = {
   id: "indexical",
   label: "Indexical",
   description: "Radar maps and data points",
-  icon: Scan,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-spatial)",
   generate: () => ({
     wrapper: `bg-[#0b0b14] text-[var(--color-primary)] border border-[var(--color-primary)]/20 p-6 relative [background-image:radial-gradient(circle_at_center,var(--color-primary)_1px,transparent_1px)] [background-size:40px_40px] opacity-100`,

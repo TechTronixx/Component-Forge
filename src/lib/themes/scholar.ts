@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { GraduationCap } from "lucide-react";
+
 
 export const scholar: ThemeDefinition = {
   id: "scholar",
   label: "Scholar",
   description: "Academic rigor, high readability",
-  icon: GraduationCap,
+  icon: "solar:square-academic-cap-bold-duotone",
   font: "var(--font-academic)",
   generate: ({ border }: ThemeParams) => ({
     wrapper: `bg-[#fefdf5] text-[#111] ${border} border-transparent p-8 max-w-prose mx-auto shadow-none`,

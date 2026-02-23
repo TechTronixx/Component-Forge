@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Newspaper } from "lucide-react";
+
 
 export const publisher: ThemeDefinition = {
   id: "publisher",
   label: "Publisher",
   description: "Editorial, grid-based, bold type",
-  icon: Newspaper,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-serif)",
   generate: () => ({
     wrapper: `bg-white text-black border-2 border-black p-0`,

@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Search } from "lucide-react";
+
 
 export default function SearchBar() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -28,7 +29,7 @@ export default function SearchBar() {
   return (
     <div className={twMerge(clsx("w-full max-w-md", font))}>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-forge-muted)]" />
+        <ForgeIcon icon="solar:magnifer-bold" className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-forge-muted)]" />
         <input
           type="search"
           placeholder="Search components, docs, or anything..."

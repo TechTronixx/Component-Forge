@@ -6,41 +6,41 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Zap, Shield, Globe, Cpu, Palette, BarChart3 } from "lucide-react";
+import ForgeIcon from "../../ui/ForgeIcon";
 
 const FEATURES = [
   {
-    icon: Zap,
+    icon: "solar:bolt-bold-duotone",
     title: "Lightning Fast",
     desc: "Sub-millisecond response times",
     span: "col-span-2",
   },
   {
-    icon: Shield,
+    icon: "solar:shield-check-bold-duotone",
     title: "Secure",
     desc: "Enterprise-grade security",
     span: "",
   },
   {
-    icon: Globe,
+    icon: "solar:global-bold-duotone",
     title: "Global CDN",
     desc: "Edge-deployed worldwide",
     span: "",
   },
   {
-    icon: Cpu,
+    icon: "solar:cpu-bold-duotone",
     title: "AI Powered",
     desc: "Built-in machine learning",
     span: "col-span-2",
   },
   {
-    icon: Palette,
+    icon: "solar:palette-bold-duotone",
     title: "Customizable",
     desc: "Fully themeable components",
     span: "",
   },
   {
-    icon: BarChart3,
+    icon: "solar:graph-bold-duotone",
     title: "Analytics",
     desc: "Real-time metrics dashboard",
     span: "",
@@ -70,7 +70,7 @@ export default function BentoGrid() {
         clsx("grid grid-cols-2 md:grid-cols-3 gap-3 w-full", font),
       )}
     >
-      {FEATURES.map(({ icon: Icon, title, desc, span }) => (
+      {FEATURES.map(({ icon, title, desc, span }) => (
         <div
           key={title}
           className={twMerge(
@@ -78,11 +78,14 @@ export default function BentoGrid() {
               classes.card,
               padding,
               span,
-              "hover:border-[var(--color-primary)]/30 transition-colors",
+              "hover:border-(--color-primary)/30 transition-colors",
             ),
           )}
         >
-          <Icon className="w-6 h-6 text-[var(--color-primary)] mb-3" />
+          <ForgeIcon
+            icon={icon}
+            className="w-6 h-6 text-(--color-primary) mb-3"
+          />
           <h3 className={twMerge(clsx(classes.heading, "text-sm mb-1"))}>
             {title}
           </h3>

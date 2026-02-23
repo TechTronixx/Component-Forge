@@ -1,7 +1,8 @@
+import ForgeIcon from "../ui/ForgeIcon";
 import { Suspense, useState } from "react";
 import { useThemeStore } from "../../store/themeStore";
 import { getComponentById } from "../../lib/componentRegistry";
-import { Monitor, Smartphone } from "lucide-react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import CodeViewer from "./CodeViewer";
 
@@ -33,7 +34,7 @@ export default function Canvas(): React.ReactElement {
 
   if (!entry) {
     return (
-      <div className="flex-1 flex items-center justify-center text-[var(--color-forge-muted)] text-sm">
+      <div className="flex-1 flex items-center justify-center text-forge-muted text-sm">
         Select a component from the sidebar
       </div>
     );
@@ -44,10 +45,10 @@ export default function Canvas(): React.ReactElement {
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
       {/* ── Canvas Header ── */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-[var(--color-forge-border)] bg-[var(--color-forge-dark)]/50 shrink-0">
+      <div className="flex items-center justify-between px-4 py-2.5 border-b border-forge-border bg-forge-dark/50 shrink-0">
         <div className="flex items-center gap-3">
           <h2 className="text-sm font-semibold text-white">{entry.name}</h2>
-          <span className="text-[10px] text-[var(--color-forge-muted)] bg-white/5 px-1.5 py-0.5 rounded capitalize">
+          <span className="text-[10px] text-forge-muted bg-white/5 px-1.5 py-0.5 rounded capitalize">
             {entry.category}
           </span>
         </div>
@@ -68,7 +69,7 @@ export default function Canvas(): React.ReactElement {
                 {codeTab === tab && (
                   <motion.div
                     layoutId="tab-indicator"
-                    className="absolute inset-0 rounded-md bg-[var(--color-brand)]/15"
+                    className="absolute inset-0 rounded-md bg-(--color-brand)/15"
                     transition={{
                       type: "spring",
                       stiffness: 400,
@@ -97,7 +98,7 @@ export default function Canvas(): React.ReactElement {
                   : "text-[var(--color-forge-muted)]"
               }`}
             >
-              <Monitor className="w-3.5 h-3.5" />
+              <ForgeIcon icon="solar:monitor-bold" className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={() => setViewMode("mobile")}
@@ -107,14 +108,14 @@ export default function Canvas(): React.ReactElement {
                   : "text-[var(--color-forge-muted)]"
               }`}
             >
-              <Smartphone className="w-3.5 h-3.5" />
+              <ForgeIcon icon="solar:smartphone-bold" className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
       </div>
 
       {/* ── Preview / Code Area ── */}
-      <div className="flex-1 overflow-auto p-6 bg-[var(--color-forge-black)]">
+      <div className="flex-1 overflow-auto p-6 bg-forge-black">
         <AnimatePresence mode="wait">
           {codeTab === "preview" ? (
             <motion.div
@@ -135,10 +136,10 @@ export default function Canvas(): React.ReactElement {
                   damping: 30,
                 }}
               >
-                <div className="rounded-xl border border-[var(--color-forge-border)] bg-[var(--color-forge-dark)]/30 p-8 min-h-[300px] flex items-center justify-center">
+                <div className="rounded-xl border border-forge-border bg-forge-dark/30 p-8 min-h-[300px] flex items-center justify-center">
                   <Suspense
                     fallback={
-                      <div className="w-5 h-5 border-2 border-[var(--color-brand)] border-t-transparent rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-(--color-brand) border-t-transparent rounded-full animate-spin" />
                     }
                   >
                     {previewError ? (

@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { Grid3X3 } from "lucide-react";
+
 
 export const bento: ThemeDefinition = {
   id: "bento",
   label: "Bento",
   description: "Apple-style grid, clean, modern",
-  icon: Grid3X3,
+  icon: "solar:widget-bold-duotone",
   font: "var(--font-body)",
   generate: ({ radius, shadow }: ThemeParams) => ({
     wrapper: `bg-[var(--color-forge-panel)] ${radius} ${shadow} border border-[var(--color-forge-border)]`,

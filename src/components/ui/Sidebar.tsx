@@ -3,22 +3,16 @@ import {
   CATEGORIES,
   getComponentsByCategory,
 } from "../../lib/componentRegistry";
-import {
-  Layout,
-  MousePointerClick,
-  FormInput,
-  MessageCircle,
-  BarChart3,
-} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ComponentCategory } from "../../store/themeStore";
+import ForgeIcon from "./ForgeIcon";
 
-const ICON_MAP: Record<string, React.ElementType> = {
-  Layout,
-  MousePointerClick,
-  FormInput,
-  MessageCircle,
-  BarChart3,
+const ICON_MAP: Record<string, string> = {
+  Layout: "solar:sidebar-minimalistic-bold",
+  MousePointerClick: "solar:cursor-bold",
+  FormInput: "solar:text-field-bold",
+  MessageCircle: "solar:chat-round-dots-bold",
+  BarChart3: "solar:graph-bold",
 };
 
 const expandVariants = {
@@ -42,14 +36,14 @@ export default function Sidebar(): React.ReactElement {
   const setActiveComponent = useThemeStore((s) => s.setActiveComponent);
 
   return (
-    <aside className="w-[240px] shrink-0 border-r border-[var(--color-forge-border)] bg-[var(--color-forge-dark)] overflow-y-auto">
+    <aside className="w-[240px] shrink-0 border-r border-forge-border bg-forge-dark overflow-y-auto">
       <div className="p-3">
-        <p className="text-[10px] uppercase tracking-widest text-[var(--color-forge-muted)] font-semibold mb-3 px-2">
+        <p className="text-[10px] uppercase tracking-widest text-forge-muted font-semibold mb-3 px-2">
           Components
         </p>
 
         {CATEGORIES.map((cat) => {
-          const Icon = ICON_MAP[cat.icon];
+          const iconName = ICON_MAP[cat.icon];
           const isActive = activeCategory === cat.id;
           const components = getComponentsByCategory(cat.id);
 
@@ -59,14 +53,16 @@ export default function Sidebar(): React.ReactElement {
                 onClick={() => setActiveCategory(cat.id as ComponentCategory)}
                 className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-sm transition-colors ${
                   isActive
-                    ? "bg-white/[0.07] text-white"
-                    : "text-[var(--color-forge-muted)] hover:text-white/70 hover:bg-white/[0.03]"
+                    ? "bg-white/7 text-white"
+                    : "text-forge-muted hover:text-white/70 hover:bg-white/3"
                 }`}
               >
-                {Icon && <Icon className="w-4 h-4 shrink-0" />}
+                {iconName && (
+                  <ForgeIcon icon={iconName} className="w-4 h-4 shrink-0" />
+                )}
                 <span className="font-medium">{cat.label}</span>
                 <motion.span
-                  className="ml-auto text-[10px] text-[var(--color-forge-muted)]"
+                  className="ml-auto text-[10px] text-forge-muted"
                   animate={{ rotate: isActive ? 0 : 0 }}
                 >
                   {components.length}
@@ -83,7 +79,7 @@ export default function Sidebar(): React.ReactElement {
                     exit="exit"
                     className="overflow-hidden"
                   >
-                    <div className="ml-4 mt-1 mb-2 pl-3 border-l border-[var(--color-forge-border)]">
+                    <div className="ml-4 mt-1 mb-2 pl-3 border-l border-forge-border">
                       {components.map((comp, i) => (
                         <motion.button
                           key={comp.id}
@@ -96,8 +92,8 @@ export default function Sidebar(): React.ReactElement {
                           onClick={() => setActiveComponent(comp.id)}
                           className={`w-full text-left px-2 py-1.5 rounded text-xs transition-colors ${
                             activeComponent === comp.id
-                              ? "text-[var(--color-primary)] bg-[var(--color-primary)]/5"
-                              : "text-[var(--color-forge-muted)] hover:text-white/70"
+                              ? "text-(--color-primary) bg-(--color-primary)/5"
+                              : "text-forge-muted hover:text-white/70"
                           }`}
                         >
                           {comp.name}

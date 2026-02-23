@@ -3,6 +3,7 @@ import type { FontStyle } from "../../store/themeStore";
 import SliderControl from "./SliderControl";
 import ColorPicker from "./ColorPicker";
 import { motion } from "framer-motion";
+import ForgeIcon from "./ForgeIcon";
 
 import { getAllThemes } from "../../lib/themeRegistry";
 
@@ -37,12 +38,11 @@ export default function ControlPanel() {
   const setFontStyle = useThemeStore((s) => s.setFontStyle);
 
   return (
-    <aside className="w-[320px] shrink-0 border-l border-[var(--color-forge-border)] bg-[var(--color-forge-dark)] overflow-y-auto">
+    <aside className="w-[320px] shrink-0 border-l border-forge-border bg-forge-dark overflow-y-auto">
       <div className="p-4 space-y-6">
-        {/* ── Archetype ── */}
         <div>
-          <p className="text-[10px] uppercase tracking-widest text-[var(--color-forge-muted)] font-semibold mb-3">
-            Archetype
+          <p className="text-[10px] uppercase tracking-widest text-forge-muted font-bold mb-3">
+            Design Direction
           </p>
           <div className="grid grid-cols-2 gap-2">
             {ARCHETYPES.map((a) => (
@@ -51,21 +51,21 @@ export default function ControlPanel() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => setArchetype(a.id)}
-                className={`relative flex items-center gap-2 px-3 py-2.5 rounded-lg text-xs font-medium transition-colors ${
+                className={`relative flex items-center gap-2 px-3 min-h-[44px] rounded-lg text-xs font-medium transition-colors ${
                   archetype === a.id
-                    ? "text-[var(--color-brand)]"
-                    : "bg-white/[0.03] text-[var(--color-forge-muted)] border border-transparent hover:bg-white/[0.06] hover:text-white/70"
+                    ? "text-(--color-primary)"
+                    : "bg-white/3 text-forge-muted border border-transparent hover:bg-white/6 hover:text-white/70"
                 }`}
               >
                 {archetype === a.id && (
                   <motion.div
                     layoutId="archetype-indicator"
-                    className="absolute inset-0 rounded-lg bg-[var(--color-brand)]/15 border border-[var(--color-brand)]/30"
+                    className="absolute inset-0 rounded-lg bg-(--color-primary)/15 border border-(--color-primary)/30"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
-                <span className="relative z-10 flex items-center gap-2">
-                  <a.icon className="w-3.5 h-3.5" />
+                <span className="relative z-10 flex items-center gap-2 leading-tight">
+                  <ForgeIcon icon={a.icon} className="w-4 h-4 shrink-0" />
                   {a.label}
                 </span>
               </motion.button>
@@ -73,18 +73,16 @@ export default function ControlPanel() {
           </div>
         </div>
 
-        {/* ── Color ── */}
         <div>
-          <p className="text-[10px] uppercase tracking-widest text-[var(--color-forge-muted)] font-semibold mb-3">
+          <p className="text-[10px] uppercase tracking-widest text-forge-muted font-semibold mb-3">
             Primary Color
           </p>
           <ColorPicker value={primaryColor} onChange={setPrimaryColor} />
         </div>
 
-        {/* ── Sliders ── */}
         <div className="space-y-4">
-          <p className="text-[10px] uppercase tracking-widest text-[var(--color-forge-muted)] font-semibold">
-            Fine Tuning
+          <p className="text-[10px] uppercase tracking-widest text-forge-muted font-bold">
+            Craftsmanship
           </p>
           <SliderControl
             label="Border Radius"
@@ -120,9 +118,8 @@ export default function ControlPanel() {
           />
         </div>
 
-        {/* ── Font Style ── */}
         <div>
-          <p className="text-[10px] uppercase tracking-widest text-[var(--color-forge-muted)] font-semibold mb-3">
+          <p className="text-[10px] uppercase tracking-widest text-forge-muted font-semibold mb-3">
             Font Style
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -132,8 +129,8 @@ export default function ControlPanel() {
                 onClick={() => setFontStyle(f.id)}
                 className={`flex-none px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
                   fontStyle === f.id
-                    ? "bg-[var(--color-brand)]/15 text-[var(--color-brand)] border border-[var(--color-brand)]/30"
-                    : "bg-white/[0.03] text-[var(--color-forge-muted)] border border-transparent hover:bg-white/[0.06] hover:text-white"
+                    ? "bg-(--color-primary)/15 text-(--color-primary) border border-(--color-primary)/30"
+                    : "bg-white/3 text-forge-muted border border-transparent hover:bg-white/6 hover:text-white"
                 }`}
               >
                 {f.label}

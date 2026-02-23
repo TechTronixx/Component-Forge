@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { Layers3 } from "lucide-react";
+
 
 export const brutal: ThemeDefinition = {
   id: "brutal",
   label: "Brutal",
   description: "High contrast, hard shadows, raw aesthetic",
-  icon: Layers3,
+  icon: "solar:layers-minimalistic-bold-duotone",
   font: "var(--font-mono)",
   generate: ({ radius, border }: ThemeParams) => ({
     wrapper: `bg-[var(--color-surface)] ${radius} ${border} border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)]`,

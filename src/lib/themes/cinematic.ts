@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Clapperboard } from "lucide-react";
+
 
 export const cinematic: ThemeDefinition = {
   id: "cinematic",
   label: "Cinematic",
   description: "Immersive media focus",
-  icon: Clapperboard,
+  icon: "solar:videocamera-record-bold-duotone",
   font: "var(--font-serif)",
   generate: () => ({
     wrapper: `bg-black text-white p-0 overflow-hidden`,

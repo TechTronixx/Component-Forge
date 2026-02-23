@@ -1,8 +1,9 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import { generateThemeClasses, getFont } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Menu, X, Sparkles } from "lucide-react";
+
 import { useState } from "react";
 
 export default function Navbar() {
@@ -31,7 +32,7 @@ export default function Navbar() {
         )}
       >
         <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5 text-[var(--color-primary)]" />
+          <ForgeIcon icon="solar:stars-minimalistic-bold-duotone" className="w-5 h-5 text-[var(--color-primary)]" />
           <span className={twMerge(clsx(classes.heading, "text-sm"))}>
             Acme Inc
           </span>
@@ -81,9 +82,9 @@ export default function Navbar() {
           className={twMerge(clsx(classes.text, "md:hidden cursor-pointer"))}
         >
           {mobileOpen ? (
-            <X className="w-5 h-5" />
+            <ForgeIcon icon="solar:close-circle-bold" className="w-5 h-5" />
           ) : (
-            <Menu className="w-5 h-5" />
+            <ForgeIcon icon="solar:hamburger-menu-bold" className="w-5 h-5" />
           )}
         </button>
       </nav>

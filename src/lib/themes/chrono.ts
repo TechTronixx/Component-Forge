@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Clock } from "lucide-react";
+
 
 export const chrono: ThemeDefinition = {
   id: "chrono",
   label: "Chrono",
   description: "Temporal interfaces and history",
-  icon: Clock,
+  icon: "solar:clock-circle-bold-duotone",
   font: "var(--font-cyber)",
   generate: () => ({
     wrapper: `bg-[#1a1a1a] text-[#d4af37] border-4 border-double border-[#d4af37]/40 p-6`,

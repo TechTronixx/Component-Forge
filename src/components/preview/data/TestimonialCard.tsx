@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Star } from "lucide-react";
+
 
 const TESTIMONIALS = [
   {
@@ -55,7 +56,7 @@ export default function TestimonialCard() {
         >
           <div className="flex gap-1">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+              <ForgeIcon icon="solar:star-bold" key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
             ))}
           </div>
           <p

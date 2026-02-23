@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { Triangle } from "lucide-react";
+
 
 export const refractive: ThemeDefinition = {
   id: "refractive",
   label: "Refractive",
   description: "Advanced glassmorphism with dispersion",
-  icon: Triangle,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-display)",
   generate: ({ radius }: ThemeParams) => ({
     wrapper: `bg-white/10 backdrop-blur-3xl saturate-200 border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] ${radius}`,

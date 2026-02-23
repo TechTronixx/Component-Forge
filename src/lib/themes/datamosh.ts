@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Zap } from "lucide-react";
+
 
 export const datamosh: ThemeDefinition = {
   id: "datamosh",
   label: "Datamosh",
   description: "Digital decay and glitch aesthetics",
-  icon: Zap,
+  icon: "solar:bolt-bold-duotone",
   font: "var(--font-cyber)",
   generate: () => ({
     wrapper: `bg-black text-white border-2 border-red-500 border-dashed p-4 relative overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,0,0,0.1)_25%,rgba(255,0,0,0.1)_50%,transparent_50%,transparent_75%,rgba(0,0,255,0.1)_75%,rgba(0,0,255,0.1)_100%)] before:bg-[length:10px_10px]`,

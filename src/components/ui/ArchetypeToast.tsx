@@ -1,8 +1,9 @@
+import ForgeIcon from "../ui/ForgeIcon";
 import { useEffect, useState } from "react";
 import { useThemeStore } from "../../store/themeStore";
 import { getTheme } from "../../lib/themeRegistry";
 import { AnimatePresence, motion } from "framer-motion";
-import { Sparkles, Type } from "lucide-react";
+
 
 export default function ArchetypeToast() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -33,7 +34,7 @@ export default function ArchetypeToast() {
         >
           <div className="bg-[var(--color-forge-panel)] border border-[var(--color-forge-border)] shadow-2xl rounded-full px-5 py-3 flex items-center gap-4 backdrop-blur-md">
             <div className="flex items-center gap-2 border-r border-white/10 pr-4">
-              <Sparkles className="w-4 h-4 text-[var(--color-brand)]" />
+              <ForgeIcon icon="solar:stars-minimalistic-bold-duotone" className="w-4 h-4 text-[var(--color-brand)]" />
               <span className="text-sm font-medium text-white">
                 {theme.label} Active
               </span>
@@ -44,7 +45,7 @@ export default function ArchetypeToast() {
             </span>
 
             <div className="flex items-center gap-1.5 pl-2 border-l border-white/10">
-              <Type className="w-3.5 h-3.5 text-[var(--color-forge-muted)]" />
+              <ForgeIcon icon="solar:stars-bold" className="w-3.5 h-3.5 text-[var(--color-forge-muted)]" />
               <span className="text-xs font-mono text-[var(--color-forge-muted)] opacity-75">
                 {theme.font.replace("var(--font-", "").replace(")", "")}
               </span>

@@ -1,16 +1,6 @@
 import { Link } from "react-router";
 import { motion } from "framer-motion";
-import {
-  Star,
-  ArrowRight,
-  Sparkles,
-  Layers,
-  Palette,
-  Code2,
-  Zap,
-  Monitor,
-  Smartphone,
-} from "lucide-react";
+import ForgeIcon from "../components/ui/ForgeIcon";
 
 /* ─────────────────────────────────────────────
    Data
@@ -27,7 +17,7 @@ const ARCHETYPES = [
     id: "glass",
     label: "Spatial Glass",
     desc: "Frosted layers, depth, luminance",
-    gradient: "from-blue-500/20 via-indigo-500/10 to-blue-400/20",
+    gradient: "from-blue-500/20 via-cyan-500/10 to-blue-400/20",
     border: "border-white/15",
     preview: "backdrop-blur-xl bg-white/5",
   },
@@ -56,36 +46,48 @@ const ARCHETYPES = [
     border: "border-white/10",
     preview: "bg-transparent border-b-2 border-white/30",
   },
+  {
+    id: "aurora",
+    label: "Aurora Contrast",
+    desc: "Luminous depths, emerald light, high impact",
+    gradient: "from-teal-500/30 via-emerald-500/10 to-amber-500/20",
+    border: "border-teal-500/20",
+    preview:
+      "bg-teal-500/5 border border-teal-500/20 shadow-[0_0_20px_rgba(20,184,166,0.1)]",
+  },
 ];
+
+const ARCHETYPE_FOOTER =
+  "And 20+ more artisanal directions available in the Studio.";
 
 const FEATURES = [
   {
-    icon: Palette,
+    icon: "solar:palette-bold",
     title: "Smart Palettes",
     desc: "Pick one color. Get a full system.",
   },
   {
-    icon: Layers,
+    icon: "solar:layers-bold-duotone",
     title: "32 Components",
     desc: "Forms, cards, navs, modals—all styled.",
   },
   {
-    icon: Code2,
+    icon: "solar:code-bold",
     title: "Copy & Paste",
     desc: "React or HTML. One click export.",
   },
   {
-    icon: Zap,
+    icon: "solar:bolt-bold",
     title: "Real-time Tuning",
     desc: "Radius, shadow, density—live preview.",
   },
   {
-    icon: Monitor,
+    icon: "solar:monitor-bold",
     title: "Desktop Preview",
     desc: "See your components at full width.",
   },
   {
-    icon: Smartphone,
+    icon: "solar:smartphone-bold",
     title: "Mobile Ready",
     desc: "Responsive-first generated code.",
   },
@@ -139,7 +141,7 @@ export default function Landing() {
                 radial-gradient(ellipse 60% 80% at 65% 40%,
                   oklch(0.8 0.12 180) 0%,
                   oklch(0.8 0.15 150) 30%,
-                  oklch(0.7 0.2 30) 65%,
+                  oklch(0.8 0.15 80) 65%,
                   transparent 100%)
               `,
               filter: "blur(48px)",
@@ -154,7 +156,7 @@ export default function Landing() {
               background: `
                 radial-gradient(ellipse 50% 70% at 55% 45%,
                   oklch(0.8 0.15 150) 0%,
-                  oklch(0.7 0.2 30) 40%,
+                  oklch(0.8 0.15 80) 40%,
                   transparent 80%)
               `,
               filter: "blur(64px)",
@@ -172,7 +174,10 @@ export default function Landing() {
           {/* Logo */}
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-linear-to-br from-(--color-primary) to-(--color-secondary) flex items-center justify-center shadow-lg shadow-(--color-primary)/30">
-              <Sparkles className="w-4 h-4 text-white" />
+              <ForgeIcon
+                icon="solar:stars-minimalistic-bold-duotone"
+                className="w-4 h-4 text-white"
+              />
             </div>
             <span
               className="text-base font-bold text-white tracking-tight"
@@ -207,7 +212,11 @@ export default function Landing() {
               to="/studio"
               className="flex items-center gap-1.5 px-5 py-2 rounded-full bg-white text-forge-black text-sm font-semibold hover:bg-white/90 transition-all shadow-lg"
             >
-              Open Studio
+              Open Studio{" "}
+              <ForgeIcon
+                icon="solar:arrow-right-bold"
+                className="w-3.5 h-3.5"
+              />
             </Link>
           </div>
         </nav>
@@ -222,7 +231,10 @@ export default function Landing() {
           {/* Trust badge */}
           <motion.div variants={fadeUp} className="mb-8">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/8 border border-white/15 text-white/75 text-xs font-medium backdrop-blur-sm">
-              <Star className="w-3.5 h-3.5 fill-(--color-primary) text-(--color-primary)" />
+              <ForgeIcon
+                icon="solar:star-bold"
+                className="w-3.5 h-3.5 text-(--color-primary)"
+              />
               Trusted by designers &amp; developers globally
             </span>
           </motion.div>
@@ -275,7 +287,10 @@ export default function Landing() {
               className="group flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-forge-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
             >
               Start Generating
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <ForgeIcon
+                icon="solar:arrow-right-bold"
+                className="w-4 h-4 group-hover:translate-x-0.5 transition-transform"
+              />
             </Link>
             <a
               href="#archetypes"
@@ -303,7 +318,7 @@ export default function Landing() {
           className="font-black text-white text-center mb-4 text-3xl md:text-5xl tracking-tight"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Four Vibes.{" "}
+          Five Vibes.{" "}
           <span
             className="italic font-bold bg-linear-to-r from-(--color-primary) via-(--color-secondary) to-(--color-accent) bg-clip-text text-transparent"
             style={{ fontFamily: "var(--font-serif)" }}
@@ -343,6 +358,12 @@ export default function Landing() {
             </motion.div>
           ))}
         </div>
+        <motion.p
+          variants={fadeUp}
+          className="text-center text-forge-muted mt-12 text-sm font-medium uppercase tracking-widest opacity-60"
+        >
+          {ARCHETYPE_FOOTER}
+        </motion.p>
       </motion.section>
 
       {/* ══════════════════════════════════════
@@ -370,7 +391,10 @@ export default function Landing() {
               variants={scaleIn}
               className="p-6 rounded-2xl bg-white/3 border border-white/6 hover:border-white/10 hover:bg-white/5 transition-all duration-300"
             >
-              <f.icon className="w-7 h-7 text-(--color-primary) mb-4" />
+              <ForgeIcon
+                icon={f.icon}
+                className="w-7 h-7 text-(--color-primary) mb-4"
+              />
               <h3
                 className="text-white font-semibold mb-1.5"
                 style={{ fontFamily: "var(--font-display)" }}

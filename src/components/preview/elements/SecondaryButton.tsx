@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { ExternalLink } from "lucide-react";
+
 
 export default function SecondaryButton() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -44,7 +45,7 @@ export default function SecondaryButton() {
           ),
         )}
       >
-        View Docs <ExternalLink className="w-3.5 h-3.5" />
+        View Docs <ForgeIcon icon="solar:stars-bold" className="w-3.5 h-3.5" />
       </button>
       <button
         className={twMerge(

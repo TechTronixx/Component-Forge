@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { ArrowRight, Sparkles } from "lucide-react";
+
 
 export default function HeroSection() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -36,7 +37,7 @@ export default function HeroSection() {
           clsx(classes.badge, "inline-flex items-center gap-1.5 px-3 py-1"),
         )}
       >
-        <Sparkles className="w-3 h-3" /> New Release
+        <ForgeIcon icon="solar:stars-minimalistic-bold-duotone" className="w-3 h-3" /> New Release
       </span>
       <h1 className={twMerge(clsx(classes.heading, "text-3xl md:text-4xl"))}>
         Build Faster.
@@ -60,7 +61,7 @@ export default function HeroSection() {
             ),
           )}
         >
-          Get Started <ArrowRight className="w-4 h-4" />
+          Get Started <ForgeIcon icon="solar:arrow-right-bold" className="w-4 h-4" />
         </button>
         <button
           className={twMerge(

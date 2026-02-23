@@ -3,6 +3,7 @@ import { glass } from "./themes/glass";
 import { brutal } from "./themes/brutal";
 import { bento } from "./themes/bento";
 import { swiss } from "./themes/swiss";
+import { aurora } from "./themes/aurora";
 import { tinker } from "./themes/tinker";
 import { fauxOS } from "./themes/faux-os";
 import { eInk } from "./themes/e-ink";
@@ -31,6 +32,7 @@ export const themes: Record<string, ThemeDefinition> = {
   brutal,
   bento,
   swiss,
+  aurora,
   tinker,
   "faux-os": fauxOS,
   "e-ink": eInk,

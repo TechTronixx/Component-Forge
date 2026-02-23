@@ -1,3 +1,4 @@
+import ForgeIcon from "../ui/ForgeIcon";
 import { useState, useCallback } from "react";
 import { useThemeStore } from "../../store/themeStore";
 import type { ThemeState } from "../../store/themeStore";
@@ -10,7 +11,7 @@ import {
   getDensity,
   getFont,
 } from "../../lib/themeUtils";
-import { Check, Copy } from "lucide-react";
+
 
 interface CodeViewerProps {
   componentId: string;
@@ -65,12 +66,12 @@ export default function CodeViewer({ componentId, format }: CodeViewerProps) {
         >
           {copied ? (
             <>
-              <Check className="w-3 h-3 text-emerald-400" />
+              <ForgeIcon icon="solar:check-read-bold" className="w-3 h-3 text-emerald-400" />
               <span className="text-emerald-400">Copied</span>
             </>
           ) : (
             <>
-              <Copy className="w-3 h-3" />
+              <ForgeIcon icon="solar:copy-bold" className="w-3 h-3" />
               Copy
             </>
           )}

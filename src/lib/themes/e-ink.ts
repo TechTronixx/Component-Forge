@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { BookOpen } from "lucide-react";
+
 
 export const eInk: ThemeDefinition = {
   id: "e-ink",
   label: "E-Ink",
   description: "1-bit sustainable aesthetic",
-  icon: BookOpen,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-cyber)", // Using Share Tech Mono or generic Mono if preferred
   generate: () => ({
     wrapper: `bg-[#f0f0f0] border-[3px] border-black text-black`,

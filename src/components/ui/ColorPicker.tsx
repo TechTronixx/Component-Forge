@@ -6,22 +6,22 @@ interface ColorPickerProps {
 }
 
 const PRESETS = [
-  "#6366f1",
-  "#8b5cf6",
-  "#a855f7",
-  "#d946ef",
-  "#ec4899",
-  "#f43f5e",
-  "#ef4444",
-  "#f97316",
-  "#eab308",
-  "#22c55e",
-  "#14b8a6",
-  "#06b6d4",
-  "#3b82f6",
-  "#2563eb",
-  "#0ea5e9",
-  "#64748b",
+  "#14b8a6", // Teal
+  "#10b981", // Emerald
+  "#059669", // Dark Emerald
+  "#22c55e", // Green
+  "#16a34a", // Dark Green
+  "#84cc16", // Lime
+  "#eab308", // Yellow
+  "#f59e0b", // Amber
+  "#f97316", // Orange
+  "#ea580c", // Dark Orange
+  "#3b82f6", // Blue
+  "#2563eb", // Dark Blue
+  "#6366f1", // Indigo
+  "#0ea5e9", // Sky
+  "#06b6d4", // Cyan
+  "#64748b", // Slate
 ];
 
 export default function ColorPicker({ value, onChange }: ColorPickerProps) {
@@ -63,8 +63,8 @@ export default function ColorPicker({ value, onChange }: ColorPickerProps) {
           value={inputValue}
           onChange={(e) => handleHexInput(e.target.value)}
           onBlur={() => setInputValue(value)}
-          className="flex-1 px-3 py-2 rounded-lg bg-white/5 border border-[var(--color-forge-border)] text-white text-xs font-mono focus:border-[var(--color-primary)] outline-none transition-colors"
-          placeholder="#6366f1"
+          className="flex-1 px-3 py-2 rounded-lg bg-white/5 border border-forge-border text-white text-xs font-mono focus:border-(--color-primary) outline-none transition-colors"
+          placeholder="#14b8a6"
           maxLength={7}
         />
       </div>
@@ -80,7 +80,7 @@ export default function ColorPicker({ value, onChange }: ColorPickerProps) {
             }}
             className={`w-full aspect-square rounded-md transition-transform hover:scale-110 ${
               value === hex
-                ? "ring-2 ring-white ring-offset-1 ring-offset-[var(--color-forge-dark)]"
+                ? "ring-2 ring-white ring-offset-1 ring-offset-forge-dark"
                 : ""
             }`}
             style={{ backgroundColor: hex }}

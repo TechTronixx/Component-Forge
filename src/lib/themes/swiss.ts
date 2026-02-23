@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Type } from "lucide-react";
+
 
 export const swiss: ThemeDefinition = {
   id: "swiss",
   label: "Swiss",
   description: "Typography-driven, grid lines, minimalist",
-  icon: Type,
+  icon: "fluent:text-field-24-filled",
   font: "var(--font-display)",
   generate: () => ({
     wrapper: "bg-transparent border-b border-[var(--color-forge-border)]",

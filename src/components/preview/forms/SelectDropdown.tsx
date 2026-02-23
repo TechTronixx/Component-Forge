@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -7,7 +8,7 @@ import {
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+
 
 const OPTIONS = ["React", "Vue", "Angular", "Svelte", "Solid"];
 
@@ -48,7 +49,7 @@ export default function SelectDropdown() {
           )}
         >
           <span>{selected}</span>
-          <ChevronDown
+          <ForgeIcon icon="solar:alt-arrow-down-bold"
             className={twMerge(
               clsx("w-4 h-4 transition-transform", open && "rotate-180"),
             )}

@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Monitor } from "lucide-react";
+
 
 export const fauxOS: ThemeDefinition = {
   id: "faux-os",
   label: "Faux-OS",
   description: "Retro operating system emulator",
-  icon: Monitor,
+  icon: "solar:monitor-bold-duotone",
   font: "var(--font-retro)",
   generate: () => ({
     wrapper: `bg-[#c0c0c0] border-2 border-t-white border-l-white border-r-[#808080] border-b-[#808080] p-1 shadow-xl`,

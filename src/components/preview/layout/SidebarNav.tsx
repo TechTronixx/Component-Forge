@@ -2,23 +2,16 @@ import { useThemeStore } from "../../../store/themeStore";
 import { generateThemeClasses, getFont } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import {
-  Home,
-  Users,
-  Settings,
-  BarChart3,
-  FileText,
-  HelpCircle,
-} from "lucide-react";
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useState } from "react";
 
 const NAV_ITEMS = [
-  { icon: Home, label: "Dashboard", active: true },
-  { icon: BarChart3, label: "Analytics" },
-  { icon: Users, label: "Team" },
-  { icon: FileText, label: "Documents" },
-  { icon: Settings, label: "Settings" },
-  { icon: HelpCircle, label: "Help" },
+  { icon: "solar:home-2-bold-duotone", label: "Dashboard", active: true },
+  { icon: "solar:graph-bold-duotone", label: "Analytics" },
+  { icon: "solar:users-group-rounded-bold-duotone", label: "Team" },
+  { icon: "solar:document-text-bold-duotone", label: "Documents" },
+  { icon: "solar:settings-bold-duotone", label: "Settings" },
+  { icon: "solar:question-square-bold-duotone", label: "Help" },
 ];
 
 export default function SidebarNav() {
@@ -39,7 +32,7 @@ export default function SidebarNav() {
 
   return (
     <div className={twMerge(clsx(classes.wrapper, font, "w-56 p-3 space-y-1"))}>
-      {NAV_ITEMS.map(({ icon: Icon, label }) => (
+      {NAV_ITEMS.map(({ icon, label }) => (
         <button
           key={label}
           onClick={() => setActive(label)}
@@ -47,7 +40,7 @@ export default function SidebarNav() {
             clsx(
               "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all cursor-pointer",
               active === label
-                ? "bg-[var(--color-primary)]/15 text-[var(--color-primary)]"
+                ? "bg-(--color-primary)/15 text-(--color-primary)"
                 : clsx(
                     classes.text,
                     "opacity-60 hover:opacity-100 hover:bg-white/5",
@@ -55,7 +48,7 @@ export default function SidebarNav() {
             ),
           )}
         >
-          <Icon className="w-4 h-4 shrink-0" />
+          <ForgeIcon icon={icon} className="w-4 h-4 shrink-0" />
           {label}
         </button>
       ))}

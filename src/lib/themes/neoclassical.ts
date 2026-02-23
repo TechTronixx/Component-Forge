@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Scroll } from "lucide-react";
+
 
 export const neoclassical: ThemeDefinition = {
   id: "neoclassical",
   label: "Neoclassical",
   description: "Ancient ledger aesthetic",
-  icon: Scroll,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-academic)",
   generate: () => ({
     wrapper: `bg-[#f0e6d2] text-[#2c1810] border-double border-4 border-[#4a3b2a] shadow-inner p-8`,

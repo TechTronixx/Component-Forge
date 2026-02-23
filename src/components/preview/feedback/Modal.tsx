@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { X } from "lucide-react";
+
 import { useState } from "react";
 
 export default function Modal() {
@@ -60,7 +61,7 @@ export default function Modal() {
                     ),
                   )}
                 >
-                  <X className="w-4 h-4" />
+                  <ForgeIcon icon="solar:close-circle-bold" className="w-4 h-4" />
                 </button>
               </div>
               <p className={twMerge(clsx(classes.text, "text-sm opacity-70"))}>

@@ -59,7 +59,7 @@ export interface ThemeActions {
 export const useThemeStore = create<ThemeState & ThemeActions>((set) => ({
   /* ── Defaults ── */
   archetype: "bento",
-  primaryColor: "#6366f1",
+  primaryColor: "#14b8a6", // Teal
   borderRadius: 2,
   borderWidth: 1,
   shadowDepth: 2,

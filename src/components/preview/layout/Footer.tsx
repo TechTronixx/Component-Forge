@@ -1,8 +1,9 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import { generateThemeClasses, getFont } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Github, Twitter, Sparkles } from "lucide-react";
+
 
 export default function Footer() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -31,7 +32,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--color-primary)]" />
+            <ForgeIcon icon="solar:stars-minimalistic-bold-duotone" className="w-4 h-4 text-[var(--color-primary)]" />
             <span className={twMerge(clsx(classes.heading, "text-sm"))}>
               Acme
             </span>
@@ -40,8 +41,8 @@ export default function Footer() {
             Building the future, one component at a time.
           </p>
           <div className="flex gap-3">
-            <Github className="w-4 h-4 text-[var(--color-forge-muted)] hover:text-[var(--color-primary)] cursor-pointer transition-colors" />
-            <Twitter className="w-4 h-4 text-[var(--color-forge-muted)] hover:text-[var(--color-primary)] cursor-pointer transition-colors" />
+            <ForgeIcon icon="fluent:link-24-filled" className="w-4 h-4 text-[var(--color-forge-muted)] hover:text-[var(--color-primary)] cursor-pointer transition-colors" />
+            <ForgeIcon icon="fluent:link-24-filled" className="w-4 h-4 text-[var(--color-forge-muted)] hover:text-[var(--color-primary)] cursor-pointer transition-colors" />
           </div>
         </div>
 

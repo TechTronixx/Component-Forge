@@ -1,9 +1,10 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import { getFont } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useState } from "react";
-import { Check } from "lucide-react";
+
 
 export default function Checkbox() {
   const fontStyle = useThemeStore((s) => s.fontStyle);
@@ -44,7 +45,7 @@ export default function Checkbox() {
               ),
             )}
           >
-            {checked[key] && <Check className="w-3 h-3 text-white" />}
+            {checked[key] && <ForgeIcon icon="solar:check-read-bold" className="w-3 h-3 text-white" />}
           </button>
           <span className="text-sm text-[var(--color-forge-text)]">
             {label}

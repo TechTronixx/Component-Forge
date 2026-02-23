@@ -2,7 +2,7 @@ import { useThemeStore } from "../../../store/themeStore";
 import { generateThemeClasses } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Heart, Share2, Settings, Plus, Trash2, Download } from "lucide-react";
+import ForgeIcon from "../../ui/ForgeIcon";
 
 export default function IconButton() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -18,23 +18,23 @@ export default function IconButton() {
   });
 
   const icons = [
-    { icon: Heart, label: "Like" },
-    { icon: Share2, label: "Share" },
-    { icon: Settings, label: "Settings" },
-    { icon: Plus, label: "Add" },
-    { icon: Trash2, label: "Delete" },
-    { icon: Download, label: "Download" },
+    { icon: "solar:heart-bold", label: "Like" },
+    { icon: "solar:share-bold", label: "Share" },
+    { icon: "solar:settings-bold", label: "Settings" },
+    { icon: "solar:plus-math-bold", label: "Add" },
+    { icon: "solar:trash-bin-trash-bold", label: "Delete" },
+    { icon: "solar:download-bold", label: "Download" },
   ];
 
   return (
     <div className="flex flex-wrap gap-3 items-center">
-      {icons.map(({ icon: Icon, label }) => (
+      {icons.map(({ icon, label }) => (
         <button
           key={label}
           title={label}
           className={twMerge(clsx(classes.button, "p-2.5 cursor-pointer"))}
         >
-          <Icon className="w-4 h-4" />
+          <ForgeIcon icon={icon} className="w-4 h-4" />
         </button>
       ))}
     </div>

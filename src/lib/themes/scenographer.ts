@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Globe } from "lucide-react";
+
 
 export const scenographer: ThemeDefinition = {
   id: "scenographer",
   label: "Scenographer",
   description: "Simulated WebGL environments",
-  icon: Globe,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-spatial)",
   generate: () => ({
     wrapper: `bg-[#050510] text-white overflow-hidden relative before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_50%_0%,rgba(56,189,248,0.2),transparent_70%)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1/2 after:bg-[linear-gradient(to_top,rgba(5,5,16,1),transparent)]`,

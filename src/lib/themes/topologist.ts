@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Activity } from "lucide-react";
+
 
 export const topologist: ThemeDefinition = {
   id: "topologist",
   label: "Topologist",
   description: "Mathematical patterns and topography",
-  icon: Activity,
+  icon: "solar:graph-bold-duotone",
   font: "var(--font-mono)",
   generate: () => ({
     wrapper: `bg-[#fafafa] text-[#333] [background-image:linear-gradient(30deg,#f0f0f0_12%,transparent_12.5%,transparent_87%,#f0f0f0_87.5%,#f0f0f0),linear-gradient(150deg,#f0f0f0_12%,transparent_12.5%,transparent_87%,#f0f0f0_87.5%,#f0f0f0),linear-gradient(30deg,#f0f0f0_12%,transparent_12.5%,transparent_87%,#f0f0f0_87.5%,#f0f0f0),linear-gradient(150deg,#f0f0f0_12%,transparent_12.5%,transparent_87%,#f0f0f0_87.5%,#f0f0f0),linear-gradient(60deg,#e0e0e0_25%,transparent_25.5%,transparent_75%,#e0e0e0_75%,#e0e0e0),linear-gradient(60deg,#e0e0e0_25%,transparent_25.5%,transparent_75%,#e0e0e0_75%,#e0e0e0)] [background-size:20px_35px] [background-position:0_0,0_0,10px_18px,10px_18px,0_0,10px_18px] opacity-100`,

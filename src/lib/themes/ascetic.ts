@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Minus } from "lucide-react";
+
 
 export const ascetic: ThemeDefinition = {
   id: "ascetic",
   label: "Ascetic",
   description: "Structure through whitespace",
-  icon: Minus,
+  icon: "solar:minus-square-bold-duotone",
   font: "var(--font-body)",
   generate: () => ({
     wrapper: `bg-white text-[#333] shadow-none border-none p-12`,

@@ -6,33 +6,33 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { CheckCircle, AlertTriangle, XCircle, Info } from "lucide-react";
+import ForgeIcon from "../../ui/ForgeIcon";
 
 const ALERTS = [
   {
     variant: "success",
-    icon: CheckCircle,
+    icon: "solar:check-circle-bold",
     title: "Success",
     message: "Your changes have been saved.",
     color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
   },
   {
     variant: "warning",
-    icon: AlertTriangle,
+    icon: "solar:danger-bold",
     title: "Warning",
     message: "Your trial expires in 3 days.",
     color: "text-amber-400 bg-amber-500/10 border-amber-500/20",
   },
   {
     variant: "error",
-    icon: XCircle,
+    icon: "solar:close-circle-bold",
     title: "Error",
     message: "Something went wrong. Try again.",
     color: "text-red-400 bg-red-500/10 border-red-500/20",
   },
   {
     variant: "info",
-    icon: Info,
+    icon: "solar:info-circle-bold",
     title: "Info",
     message: "A new version is available.",
     color: "text-sky-400 bg-sky-500/10 border-sky-500/20",
@@ -58,7 +58,7 @@ export default function Alert() {
 
   return (
     <div className={twMerge(clsx("w-full max-w-md space-y-3", font))}>
-      {ALERTS.map(({ variant, icon: Icon, title, message, color }) => (
+      {ALERTS.map(({ variant, icon, title, message, color }) => (
         <div
           key={variant}
           className={twMerge(
@@ -70,7 +70,7 @@ export default function Alert() {
           )}
         >
           <div className="flex items-start gap-3">
-            <Icon className="w-5 h-5 shrink-0 mt-0.5" />
+            <ForgeIcon icon={icon} className="w-5 h-5 shrink-0 mt-0.5" />
             <div>
               <h4 className="text-sm font-semibold">{title}</h4>
               <p className="text-xs opacity-80 mt-0.5">{message}</p>

@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { ChevronDown } from "lucide-react";
+
 import { useState } from "react";
 
 const FAQS = [
@@ -62,7 +63,7 @@ export default function Accordion() {
             <span className={twMerge(clsx(classes.heading, "text-sm"))}>
               {faq.q}
             </span>
-            <ChevronDown
+            <ForgeIcon icon="solar:alt-arrow-down-bold"
               className={twMerge(
                 clsx(
                   "w-4 h-4 shrink-0 text-[var(--color-forge-muted)] transition-transform",

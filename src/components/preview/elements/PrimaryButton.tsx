@@ -1,3 +1,4 @@
+import ForgeIcon from "../../ui/ForgeIcon";
 import { useThemeStore } from "../../../store/themeStore";
 import {
   generateThemeClasses,
@@ -6,7 +7,7 @@ import {
 } from "../../../lib/themeUtils";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { ArrowRight } from "lucide-react";
+
 
 export default function PrimaryButton() {
   const archetype = useThemeStore((s) => s.archetype);
@@ -44,7 +45,7 @@ export default function PrimaryButton() {
           ),
         )}
       >
-        Continue <ArrowRight className="w-4 h-4" />
+        Continue <ForgeIcon icon="solar:arrow-right-bold" className="w-4 h-4" />
       </button>
       <button
         className={twMerge(

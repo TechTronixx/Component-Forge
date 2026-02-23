@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { Box } from "lucide-react";
+
 
 export const zAxis: ThemeDefinition = {
   id: "z-axis",
   label: "Z-Axis",
   description: "Spatial depth and 3D transforms",
-  icon: Box,
+  icon: "solar:box-bold-duotone",
   font: "var(--font-body)",
   generate: ({ radius }: ThemeParams) => ({
     wrapper: `bg-[#0f0f12] text-white perspective-[1000px] border border-white/10 ${radius} [transform-style:preserve-3d]`,

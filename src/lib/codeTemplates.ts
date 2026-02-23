@@ -17,22 +17,22 @@ export const TEMPLATES: Record<
       return `
 <!-- Hero Section -->
 <div class="${classes.wrapper} ${font} ${padding} w-full text-center space-y-8 py-20">
-  <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 text-xs font-medium text-[var(--color-primary)]">
+  <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-(--color-primary)/20 bg-(--color-primary)/5 text-xs font-medium text-(--color-primary)">
     <!-- Icon: Sparkles -->
     <svg class="w-3 h-3" ...></svg> v2.0 is now live
   </div>
   
-  <h1 class="${classes.heading} text-4xl md:text-6xl font-bold tracking-tight">
-    Craft the Future, <br />
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-purple-400">Pixel by Pixel.</span>
+  <h1 class="${classes.heading} text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
+    Build something <br />
+    <span class="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) via-(--color-secondary) to-(--color-accent)">extraordinary.</span>
   </h1>
   
-  <p class="${classes.text} max-w-xl mx-auto text-base md:text-lg opacity-70 leading-relaxed">
-    Stop wrestling with CSS. Start shipping. The ultimate toolkit for developers who demand excellence and speed.
+  <p class="${classes.text} max-w-xl mx-auto text-base md:text-lg opacity-70 leading-relaxed font-medium">
+    High-performance components for teams who refuse to settle. Skip the boilerplate and ship your best work today.
   </p>
   
   <div class="flex gap-4 justify-center flex-wrap pt-4">
-    <button class="${classes.button} px-8 py-3 text-sm font-medium flex items-center gap-2 shadow-lg shadow-[var(--color-primary)]/20">
+    <button class="${classes.button} px-8 py-3 text-sm font-medium flex items-center gap-2 shadow-lg shadow-(--color-primary)/20">
       Start Building <!-- Icon: ArrowRight -->
     </button>
     <button class="${classes.buttonSecondary} px-8 py-3 text-sm font-medium">
@@ -50,29 +50,29 @@ export const TEMPLATES: Record<
 </div>`;
     }
 
-    return `import { ArrowRight, Sparkles } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export default function HeroSection() {
   return (
     <div className="${classes.wrapper} ${font} ${padding} w-full text-center space-y-8 py-20">
-      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 text-xs font-medium text-[var(--color-primary)]">
-        <Sparkles className="w-3 h-3" /> v2.0 is now live
+      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-(--color-primary)/20 bg-(--color-primary)/5 text-xs font-medium text-(--color-primary)">
+        <Icon icon="solar:stars-minimalistic-bold-duotone" className="w-3 h-3"  /> v2.0 is now live
       </div>
       
-      <h1 className="${classes.heading} text-4xl md:text-6xl font-bold tracking-tight">
-        Craft the Future, <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-purple-400">
-          Pixel by Pixel.
+      <h1 className="${classes.heading} text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
+        Build something <br />
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) via-(--color-secondary) to-(--color-accent)">
+          extraordinary.
         </span>
       </h1>
       
-      <p className="${classes.text} max-w-xl mx-auto text-base md:text-lg opacity-70 leading-relaxed">
-        Stop wrestling with CSS. Start shipping. The ultimate toolkit for developers who demand excellence and speed.
+      <p className="${classes.text} max-w-xl mx-auto text-base md:text-lg opacity-70 leading-relaxed font-medium">
+        High-performance components for teams who refuse to settle. Skip the boilerplate and ship your best work today.
       </p>
       
       <div className="flex gap-4 justify-center flex-wrap pt-4">
-        <button className="${classes.button} px-8 py-3 cursor-pointer text-sm font-medium flex items-center gap-2 shadow-lg shadow-[var(--color-primary)]/20">
-          Start Building <ArrowRight className="w-4 h-4" />
+        <button className="${classes.button} px-8 py-3 cursor-pointer text-sm font-medium flex items-center gap-2 shadow-lg shadow-(--color-primary)/20">
+          Start Building <Icon icon="solar:arrow-right-bold" className="w-4 h-4"  />
         </button>
         <button className="${classes.buttonSecondary} px-8 py-3 cursor-pointer text-sm font-medium">
           View Documentation
@@ -103,14 +103,14 @@ export default function HeroSection() {
 <nav class="${classes.wrapper} ${font} flex items-center justify-between px-5 py-3 w-full">
   <div class="flex items-center gap-2">
     <!-- Icon: Sparkles -->
-    <span class="${classes.heading} text-sm">Acme Inc</span>
+    <span class="${classes.heading} text-sm font-bold tracking-tight">ComponentForge</span>
   </div>
   
   <div class="hidden md:flex items-center gap-6">
-    <a href="#" class="${classes.text} text-sm hover:text-[var(--color-primary)] transition-colors">Products</a>
-    <a href="#" class="${classes.text} text-sm hover:text-[var(--color-primary)] transition-colors">Solutions</a>
-    <a href="#" class="${classes.text} text-sm hover:text-[var(--color-primary)] transition-colors">Pricing</a>
-    <a href="#" class="${classes.text} text-sm hover:text-[var(--color-primary)] transition-colors">Docs</a>
+    <a href="#" class="${classes.text} text-sm hover:text-(--color-primary) transition-colors">Products</a>
+    <a href="#" class="${classes.text} text-sm hover:text-(--color-primary) transition-colors">Solutions</a>
+    <a href="#" class="${classes.text} text-sm hover:text-(--color-primary) transition-colors">Pricing</a>
+    <a href="#" class="${classes.text} text-sm hover:text-(--color-primary) transition-colors">Docs</a>
   </div>
 
   <div class="hidden md:flex items-center gap-2">
@@ -125,7 +125,7 @@ export default function HeroSection() {
     }
 
     return `import { useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -134,8 +134,8 @@ export default function Navbar() {
   return (
     <nav className="${classes.wrapper} ${font} flex items-center justify-between px-5 py-3 w-full relative">
       <div className="flex items-center gap-2">
-        <Sparkles className="w-5 h-5 text-[var(--color-primary)]" />
-        <span className="${classes.heading} text-sm">Acme Inc</span>
+        <Icon icon="solar:stars-minimalistic-bold-duotone" className="w-5 h-5 text-(--color-primary)"  />
+        <span className="${classes.heading} text-sm font-bold tracking-tight">ComponentForge</span>
       </div>
 
       {/* Desktop Links */}
@@ -144,7 +144,7 @@ export default function Navbar() {
           <a
             key={link}
             href="#"
-            className="${classes.text} text-sm hover:text-[var(--color-primary)] transition-colors"
+            className="${classes.text} text-sm hover:text-(--color-primary) transition-colors"
           >
             {link}
           </a>
@@ -165,12 +165,12 @@ export default function Navbar() {
         onClick={() => setMobileOpen(!mobileOpen)}
         className="${classes.text} md:hidden cursor-pointer"
       >
-        {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        {mobileOpen ? <Icon icon="solar:close-circle-bold" className="w-5 h-5"  /> : <Icon icon="solar:hamburger-menu-bold" className="w-5 h-5"  />}
       </button>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="${classes.wrapper} absolute top-full left-0 right-0 md:hidden p-4 space-y-3 border-t border-[var(--color-forge-border)] z-50">
+        <div className="${classes.wrapper} absolute top-full left-0 right-0 md:hidden p-4 space-y-3 border-t border-forge-border z-50">
           {links.map((link) => (
             <a
               key={link}
@@ -203,10 +203,10 @@ export default function Navbar() {
     <div>
       <div class="flex items-center gap-2 mb-3">
         <!-- Icon: Sparkles -->
-        <span class="${classes.heading} text-sm">Acme</span>
+        <span class="${classes.heading} text-sm font-bold tracking-tight">Forge</span>
       </div>
       <p class="${classes.text} text-xs opacity-60 mb-4">
-        Building the future, one component at a time.
+        Premium components for the modern web.
       </p>
       <div class="flex gap-3">
         <!-- Social Icons -->
@@ -224,7 +224,7 @@ export default function Navbar() {
 </footer>`;
     }
 
-    return `import { Github, Twitter, Sparkles } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export default function Footer() {
   const columns = [
@@ -238,15 +238,15 @@ export default function Footer() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--color-primary)]" />
-            <span className="${classes.heading} text-sm">Acme</span>
+            <Icon icon="solar:stars-minimalistic-bold-duotone" className="w-4 h-4 text-(--color-primary)"  />
+            <span className="${classes.heading} text-sm font-bold tracking-tight">Forge</span>
           </div>
           <p className="${classes.text} text-xs opacity-60 mb-4">
-            Building the future, one component at a time.
+            Premium components for the modern web.
           </p>
           <div className="flex gap-3">
-            <Github className="w-4 h-4 text-[var(--color-forge-muted)] hover:text-[var(--color-primary)] cursor-pointer transition-colors" />
-            <Twitter className="w-4 h-4 text-[var(--color-forge-muted)] hover:text-[var(--color-primary)] cursor-pointer transition-colors" />
+            <Github className="w-4 h-4 text-forge-muted hover:text-(--color-primary) cursor-pointer transition-colors" />
+            <Twitter className="w-4 h-4 text-forge-muted hover:text-(--color-primary) cursor-pointer transition-colors" />
           </div>
         </div>
 
@@ -266,9 +266,9 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="border-t border-[var(--color-forge-border)] pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="border-t border-forge-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="${classes.text} text-xs opacity-50">
-          © 2026 Acme Inc. All rights reserved.
+          © 2026 ComponentForge. All rights reserved.
         </p>
         <div className="flex gap-2">
           <input
@@ -293,7 +293,7 @@ export default function Footer() {
     if (format === "html") return "<!-- Sidebar HTML -->";
 
     return `import { useState } from "react";
-import { Home, Users, Settings, BarChart3, FileText, HelpCircle } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 export default function SidebarNav() {
   const [active, setActive] = useState("Dashboard");
@@ -314,7 +314,7 @@ export default function SidebarNav() {
           onClick={() => setActive(label)}
           className={\`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all cursor-pointer \${
             active === label
-              ? "bg-[var(--color-primary)]/15 text-[var(--color-primary)]"
+              ? "bg-(--color-primary)/15 text-(--color-primary)"
               : "${classes.text} opacity-60 hover:opacity-100 hover:bg-white/5"
           }\`}
         >
@@ -334,7 +334,7 @@ export default function SidebarNav() {
 
     if (format === "html") return "<!-- Bento Grid HTML -->";
 
-    return `import { Zap, Shield, Globe, Cpu, Palette, BarChart3 } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export default function BentoGrid() {
   const features = [
@@ -351,9 +351,9 @@ export default function BentoGrid() {
       {features.map(({ icon: Icon, title, desc, span }) => (
         <div
           key={title}
-          className="${classes.card} ${padding} \${span} hover:border-[var(--color-primary)]/30 transition-colors"
+          className="${classes.card} ${padding} \${span} hover:border-(--color-primary)/30 transition-colors"
         >
-          <Icon className="w-6 h-6 text-[var(--color-primary)] mb-3" />
+          <Icon className="w-6 h-6 text-(--color-primary) mb-3" />
           <h3 className="${classes.heading} text-sm mb-1">{title}</h3>
           <p className="${classes.text} text-xs opacity-60">{desc}</p>
         </div>
@@ -371,26 +371,26 @@ export default function BentoGrid() {
   return (
     <div className="w-full space-y-8">
       {/* Simple line */}
-      <div className="border-t border-[var(--color-forge-border)]" />
+      <div className="border-t border-forge-border" />
 
       {/* With text */}
       <div className="flex items-center gap-4">
-        <div className="flex-1 border-t border-[var(--color-forge-border)]" />
+        <div className="flex-1 border-t border-forge-border" />
         <span className="${classes.text} text-xs opacity-50 uppercase tracking-wider">or</span>
-        <div className="flex-1 border-t border-[var(--color-forge-border)]" />
+        <div className="flex-1 border-t border-forge-border" />
       </div>
 
       {/* Gradient fade */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[var(--color-primary)]/30 to-transparent" />
+      <div className="h-px bg-linear-to-r from-transparent via-(--color-primary)/30 to-transparent" />
 
       {/* Dotted */}
-      <div className="border-t border-dashed border-[var(--color-forge-border)]" />
+      <div className="border-t border-dashed border-forge-border" />
 
       {/* With icon */}
       <div className="flex items-center gap-4">
-        <div className="flex-1 border-t border-[var(--color-forge-border)]" />
-        <div className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />
-        <div className="flex-1 border-t border-[var(--color-forge-border)]" />
+        <div className="flex-1 border-t border-forge-border" />
+        <div className="w-2 h-2 rounded-full bg-(--color-primary)" />
+        <div className="flex-1 border-t border-forge-border" />
       </div>
     </div>
   );
@@ -525,7 +525,7 @@ export default function BentoGrid() {
     if (format === "html") return "<!-- Checkbox HTML -->";
 
     return `import { useState } from "react";
-import { Check } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 export function Checkbox({ label, ...props }) {
   const [checked, setChecked] = useState(false);
@@ -536,13 +536,13 @@ export function Checkbox({ label, ...props }) {
         onClick={() => setChecked(!checked)}
         className={\`w-5 h-5 flex items-center justify-center shrink-0 transition-all rounded-md \${
           checked
-            ? "bg-[var(--color-primary)] border-[var(--color-primary)]"
-            : "bg-transparent border border-[var(--color-forge-border)] group-hover:border-[var(--color-primary)]/50"
+            ? "bg-(--color-primary) border-(--color-primary)"
+            : "bg-transparent border border-forge-border group-hover:border-(--color-primary)/50"
         }\`}
       >
-        {checked && <Check className="w-3 h-3 text-white" />}
+        {checked && <Icon icon="solar:check-read-bold" className="w-3 h-3 text-white"  />}
       </button>
-      <span className="text-sm text-[var(--color-forge-text)]">{label}</span>
+      <span className="text-sm text-forge-text">{label}</span>
     </label>
   );
 }`;
@@ -561,23 +561,23 @@ export function RadioGroup({ options }) {
 
   return (
     <div className="space-y-2 max-w-sm ${font}">
-      <p className="text-sm font-medium text-[var(--color-forge-text)] mb-3">Choose a plan</p>
+      <p className="text-sm font-medium text-forge-text mb-3">Choose a plan</p>
       {options.map((opt) => (
         <label
           key={opt.value}
           onClick={() => setSelected(opt.value)}
           className={\`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all \${
             selected === opt.value
-              ? "border-[var(--color-primary)] bg-[var(--color-primary)]/5"
-              : "border-[var(--color-forge-border)] hover:border-[var(--color-forge-muted)]"
+              ? "border-(--color-primary) bg-(--color-primary)/5"
+              : "border-forge-border border-forge-border"
           }\`}
         >
           <div className={\`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 \${
             selected === opt.value
-              ? "border-[var(--color-primary)]"
-              : "border-[var(--color-forge-border)]"
+              ? "border-(--color-primary)"
+              : "border-forge-border"
           }\`}>
-            {selected === opt.value && <div className="w-2 h-2 rounded-full bg-[var(--color-primary)]" />}
+            {selected === opt.value && <div className="w-2 h-2 rounded-full bg-(--color-primary)" />}
           </div>
           <div>
             <p className="${classes.text} text-sm font-medium">{opt.label}</p>
@@ -611,8 +611,8 @@ export function ToggleSwitch({ label, desc }) {
         onClick={() => setEnabled(!enabled)}
         className={\`w-11 h-6 rounded-full transition-colors relative \${
           enabled
-            ? "bg-[var(--color-primary)]"
-            : "bg-[var(--color-forge-border)]"
+            ? "bg-(--color-primary)"
+            : "bg-forge-border"
         }\`}
       >
         <span
@@ -630,32 +630,32 @@ export function ToggleSwitch({ label, desc }) {
 
     if (format === "html") {
       return `<div class="flex flex-col gap-4 ${font}">
-  <a href="#" class="text-[var(--color-primary)] hover:underline underline-offset-4 transition-all inline-flex items-center gap-1">
+  <a href="#" class="text-(--color-primary) hover:underline underline-offset-4 transition-all inline-flex items-center gap-1">
     Default link style
   </a>
 </div>`;
     }
 
-    return `import { ExternalLink } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function LinkElement() {
   return (
     <div className="flex flex-col gap-4 ${font}">
       <a
         href="#"
-        className="text-[var(--color-primary)] hover:underline underline-offset-4 transition-all inline-flex items-center gap-1"
+        className="text-(--color-primary) hover:underline underline-offset-4 transition-all inline-flex items-center gap-1"
       >
         Default link style
       </a>
       <a
         href="#"
-        className="text-[var(--color-primary)] hover:underline underline-offset-4 transition-all inline-flex items-center gap-1.5"
+        className="text-(--color-primary) hover:underline underline-offset-4 transition-all inline-flex items-center gap-1.5"
       >
         Link with icon <ExternalLink className="w-3.5 h-3.5" />
       </a>
       <a
         href="#"
-        className="text-[var(--color-forge-muted)] hover:text-[var(--color-primary)] transition-colors underline-offset-4"
+        className="text-forge-muted hover:text-(--color-primary) transition-colors underline-offset-4"
       >
         Subtle link
       </a>
@@ -673,7 +673,7 @@ import { twMerge } from "tailwind-merge";
 
 export function Avatar() {
   const avatars = [
-    { initials: "JD", bg: "bg-[var(--color-primary)]", online: true },
+    { initials: "JD", bg: "bg-(--color-primary)", online: true },
     { initials: "KL", bg: "bg-[var(--color-secondary)]", online: true },
   ];
 
@@ -682,10 +682,10 @@ export function Avatar() {
       <div className="flex -space-x-3">
         {avatars.map((a, i) => (
           <div key={i} className="relative">
-            <div className={twMerge(clsx("w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold text-white border-2 border-[var(--color-forge-dark)]", a.bg))}>
+            <div className={twMerge(clsx("w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold text-white border-2 border-forge-dark", a.bg))}>
               {a.initials}
             </div>
-            {a.online && <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 rounded-full border-2 border-[var(--color-forge-dark)]" />}
+            {a.online && <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 rounded-full border-2 border-forge-dark" />}
           </div>
         ))}
       </div>
@@ -699,7 +699,7 @@ export function Avatar() {
 
     if (format === "html") return "<!-- IconButton HTML -->";
 
-    return `import { Heart, Share2, Settings } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function IconButton() {
   return (
@@ -711,7 +711,7 @@ export function IconButton() {
         <Share2 className="w-4 h-4" />
       </button>
       <button className="${classes.button} p-2.5 cursor-pointer">
-        <Settings className="w-4 h-4" />
+        <Icon icon="solar:settings-bold" className="w-4 h-4"  />
       </button>
     </div>
   );
@@ -726,7 +726,7 @@ export function IconButton() {
     if (format === "html") return "<!-- SelectDropdown HTML -->";
 
     return `import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 export function SelectDropdown() {
   const [open, setOpen] = useState(false);
@@ -742,7 +742,7 @@ export function SelectDropdown() {
           className="${classes.input} ${padding} w-full flex items-center justify-between cursor-pointer"
         >
           <span>{selected}</span>
-          <ChevronDown className={\`w-4 h-4 transition-transform \${open ? "rotate-180" : ""}\`} />
+          <Icon icon="solar:alt-arrow-down-bold" className={\`w-4 h-4 transition-transform \${open ? "rotate-180" : ""}\`}  />
         </button>
 
         {open && (
@@ -753,7 +753,7 @@ export function SelectDropdown() {
                 onClick={() => { setSelected(opt); setOpen(false); }}
                 className={\`w-full text-left px-3 py-2 text-sm transition-colors cursor-pointer \${
                   selected === opt
-                    ? "text-[var(--color-primary)] bg-[var(--color-primary)]/5"
+                    ? "text-(--color-primary) bg-(--color-primary)/5"
                     : "${classes.text} hover:bg-white/5"
                 }\`}
               >
@@ -782,8 +782,8 @@ export function Slider() {
     <div className="w-full max-w-sm space-y-4 ${font}">
       <div className="space-y-2">
         <div className="flex justify-between">
-          <label className="text-sm font-medium text-[var(--color-forge-text)]">Volume</label>
-          <span className="text-sm text-[var(--color-primary)] font-mono">{value}%</span>
+          <label className="text-sm font-medium text-forge-text">Volume</label>
+          <span className="text-sm text-(--color-primary) font-mono">{value}%</span>
         </div>
         <input
           type="range"
@@ -791,7 +791,7 @@ export function Slider() {
           max={100}
           value={value}
           onChange={(e) => setValue(Number(e.target.value))}
-          className="w-full h-2 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[var(--color-primary)] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-lg"
+          className="w-full h-2 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-(--color-primary) [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-lg"
           style={{
             background: \`linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) \${value}%, rgba(255,255,255,0.1) \${value}%, rgba(255,255,255,0.1) 100%)\`,
           }}
@@ -809,19 +809,19 @@ export function Slider() {
 
     if (format === "html") return "<!-- SearchBar HTML -->";
 
-    return `import { Search } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function SearchBar() {
   return (
     <div className="w-full max-w-md ${font}">
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-forge-muted)]" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-forge-muted" />
         <input
           type="search"
           placeholder="Search..."
           className="${classes.input} ${padding} w-full pl-10"
         />
-        <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-[var(--color-forge-muted)] bg-white/5 px-1.5 py-0.5 rounded border border-[var(--color-forge-border)]">
+        <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-forge-muted bg-white/5 px-1.5 py-0.5 rounded border border-forge-border">
           ⌘K
         </kbd>
       </div>
@@ -857,19 +857,19 @@ export function SearchBar() {
       <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
       <div>
         <h4 class="text-sm font-semibold">Warning</h4>
-        <p class="text-sm opacity-90 mt-0.5">Your trial expires in 3 days.</p>
+        <p class="text-sm opacity-90 mt-0.5">Your subscription is about to renew.</p>
       </div>
     </div>
   </div>
 </div>`;
     }
 
-    return `import { CheckCircle, AlertTriangle, XCircle, Info } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function Alert() {
   const alerts = [
     { variant: "success", icon: CheckCircle, title: "Success", message: "Your changes have been saved.", color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20" },
-    { variant: "warning", icon: AlertTriangle, title: "Warning", message: "Your trial expires in 3 days.", color: "text-amber-400 bg-amber-500/10 border-amber-500/20" },
+    { variant: "warning", icon: AlertTriangle, title: "Warning", message: "Your subscription is about to renew.", color: "text-amber-400 bg-amber-500/10 border-amber-500/20" },
     { variant: "error", icon: XCircle, title: "Error", message: "Something went wrong.", color: "text-red-400 bg-red-500/10 border-red-500/20" },
     { variant: "info", icon: Info, title: "Info", message: "A new version is available.", color: "text-sky-400 bg-sky-500/10 border-sky-500/20" },
   ];
@@ -910,12 +910,12 @@ export function Alert() {
     <div class="flex items-center justify-between">
       <h3 class="${classes.heading} text-lg">Confirm Action</h3>
       <button class="${classes.text} opacity-50 hover:opacity-100 transition-opacity">
-        <!-- Icon: X -->
+  
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
     </div>
     <p class="${classes.text} text-sm opacity-70">
-      Are you sure you want to proceed? This action cannot be undone.
+      This action is permanent and cannot be reversed. Please confirm your selection.
     </p>
     <div class="flex gap-2 justify-end pt-2">
       <button class="${classes.buttonSecondary} px-4 py-2 text-sm">Cancel</button>
@@ -926,7 +926,7 @@ export function Alert() {
     }
 
     return `import { useState } from "react";
-import { X } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 export function Modal() {
   const [open, setOpen] = useState(true);
@@ -947,11 +947,11 @@ export function Modal() {
           <div className="flex items-center justify-between">
             <h3 className="${classes.heading} text-lg">Confirm Action</h3>
             <button onClick={() => setOpen(false)} className="${classes.text} opacity-50 hover:opacity-100 transition-opacity">
-              <X className="w-4 h-4" />
+              <Icon icon="solar:close-circle-bold" className="w-4 h-4"  />
             </button>
           </div>
           <p className="${classes.text} text-sm opacity-70">
-            Are you sure you want to proceed? This action cannot be undone.
+            This action is permanent and cannot be reversed. Please confirm your selection.
           </p>
           <div className="flex gap-2 justify-end pt-2">
             <button
@@ -1032,26 +1032,26 @@ export function Tooltip() {
       <p class="${classes.text} text-xs opacity-70">Changes saved successfully</p>
     </div>
     <button class="${classes.text} opacity-50 hover:opacity-100 transition-opacity">
-      <!-- Icon: X -->
+
       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
     </button>
   </div>
 </div>`;
     }
 
-    return `import { CheckCircle, X } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function Toast() {
   return (
     <div className="fixed bottom-4 right-4 w-full max-w-sm ${font}">
       <div className="${classes.card} flex items-center gap-3 px-4 py-3 shadow-lg border-l-4 border-emerald-500">
-        <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0" />
+        <Icon icon="solar:check-read-bold"Circle className="w-5 h-5 text-emerald-500 shrink-0"  />
         <div className="flex-1">
           <h4 className="${classes.text} text-sm font-medium">Success</h4>
           <p className="${classes.text} text-xs opacity-70">Changes saved successfully</p>
         </div>
         <button className="${classes.text} opacity-50 hover:opacity-100 transition-opacity">
-          <X className="w-4 h-4" />
+          <Icon icon="solar:close-circle-bold" className="w-4 h-4"  />
         </button>
       </div>
     </div>
@@ -1066,11 +1066,11 @@ export function Toast() {
       return `<!-- Progress Bar -->
 <div class="w-full max-w-md space-y-1 ${font}">
   <div class="flex justify-between text-sm">
-    <span class="text-[var(--color-forge-text)]">Unpacking</span>
-    <span class="text-[var(--color-primary)] font-mono">72%</span>
+    <span class="text-forge-text">Unpacking</span>
+    <span class="text-(--color-primary) font-mono">72%</span>
   </div>
   <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-    <div class="h-full bg-[var(--color-primary)] rounded-full transition-all duration-500" style="width: 72%"></div>
+    <div class="h-full bg-(--color-primary) rounded-full transition-all duration-500" style="width: 72%"></div>
   </div>
 </div>`;
     }
@@ -1079,12 +1079,12 @@ export function Toast() {
   return (
     <div className="w-full max-w-md space-y-1 ${font}">
       <div className="flex justify-between text-sm">
-        <span className="text-[var(--color-forge-text)]">Unpacking</span>
-        <span className="text-[var(--color-primary)] font-mono">72%</span>
+        <span className="text-forge-text">Unpacking</span>
+        <span className="text-(--color-primary) font-mono">72%</span>
       </div>
       <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
         <div
-          className="h-full bg-[var(--color-primary)] rounded-full transition-all duration-500"
+          className="h-full bg-(--color-primary) rounded-full transition-all duration-500"
           style={{ width: "72%" }}
         />
       </div>
@@ -1100,22 +1100,22 @@ export function Toast() {
       return `<!-- Skeleton Loader -->
 <div class="${classes.card} w-full max-w-sm p-4 space-y-4">
   <div class="flex items-center gap-3">
-    <div class="w-10 h-10 rounded-full animate-pulse bg-white/[0.06]"></div>
+    <div class="w-10 h-10 rounded-full animate-pulse bg-white/6"></div>
     <div class="space-y-2 flex-1">
-      <div class="h-3 w-3/4 rounded animate-pulse bg-white/[0.06]"></div>
-      <div class="h-3 w-1/2 rounded animate-pulse bg-white/[0.06]"></div>
+      <div class="h-3 w-3/4 rounded animate-pulse bg-white/6"></div>
+      <div class="h-3 w-1/2 rounded animate-pulse bg-white/6"></div>
     </div>
   </div>
-  <div class="w-full h-32 rounded-lg animate-pulse bg-white/[0.06]"></div>
+  <div class="w-full h-32 rounded-lg animate-pulse bg-white/6"></div>
   <div class="space-y-2">
-    <div class="h-3 w-full rounded animate-pulse bg-white/[0.06]"></div>
-    <div class="h-3 w-5/6 rounded animate-pulse bg-white/[0.06]"></div>
+    <div class="h-3 w-full rounded animate-pulse bg-white/6"></div>
+    <div class="h-3 w-5/6 rounded animate-pulse bg-white/6"></div>
   </div>
 </div>`;
     }
 
     return `export function Skeleton() {
-  const shimmer = "animate-pulse bg-white/[0.06]";
+  const shimmer = "animate-pulse bg-white/6";
   
   return (
     <div className="${classes.card} w-full max-w-sm p-4 space-y-4">
@@ -1148,7 +1148,7 @@ export function Toast() {
   <!-- Starter -->
   <div class="${classes.card} ${padding} space-y-4 relative">
     <div>
-      <h3 class="${classes.heading} text-base">Starter</h3>
+      <h3 class="${classes.heading} text-base">Hobby</h3>
       <p class="${classes.text} text-xs opacity-60">Per month</p>
     </div>
     <div class="flex items-baseline gap-1">
@@ -1158,11 +1158,11 @@ export function Toast() {
     <ul class="space-y-2">
       <li class="${classes.text} flex items-center gap-2 text-sm">
         <!-- Icon: Check -->
-        <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <svg class="w-4 h-4 text-(--color-primary) shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
         5 Projects
       </li>
       <li class="${classes.text} flex items-center gap-2 text-sm">
-        <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <svg class="w-4 h-4 text-(--color-primary) shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
         Basic Analytics
       </li>
     </ul>
@@ -1172,9 +1172,9 @@ export function Toast() {
   </div>
 
   <!-- Pro (Highlighted) -->
-  <div class="${classes.card} ${padding} space-y-4 relative border-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20">
+  <div class="${classes.card} ${padding} space-y-4 relative border-(--color-primary) ring-1 ring-(--color-primary)/20">
     <span class="${classes.badge} absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 flex items-center gap-1">
-      <!-- Icon: Zap -->
+
       <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
       Popular
     </span>
@@ -1188,15 +1188,15 @@ export function Toast() {
     </div>
     <ul class="space-y-2">
       <li class="${classes.text} flex items-center gap-2 text-sm">
-        <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <svg class="w-4 h-4 text-(--color-primary) shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
         Unlimited Projects
       </li>
       <li class="${classes.text} flex items-center gap-2 text-sm">
-        <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <svg class="w-4 h-4 text-(--color-primary) shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
         Advanced Analytics
       </li>
       <li class="${classes.text} flex items-center gap-2 text-sm">
-        <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <svg class="w-4 h-4 text-(--color-primary) shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
         Priority Support
       </li>
     </ul>
@@ -1217,11 +1217,11 @@ export function Toast() {
     </div>
     <ul class="space-y-2">
       <li class="${classes.text} flex items-center gap-2 text-sm">
-        <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <svg class="w-4 h-4 text-(--color-primary) shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
         Everything in Pro
       </li>
       <li class="${classes.text} flex items-center gap-2 text-sm">
-        <svg class="w-4 h-4 text-[var(--color-primary)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <svg class="w-4 h-4 text-(--color-primary) shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
         SSO / SAML
       </li>
     </ul>
@@ -1232,23 +1232,23 @@ export function Toast() {
 </div>`;
     }
 
-    return `import { Check, Zap } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function PricingCard() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full ${font}">
       {[
-        { name: "Starter", price: "$9", features: ["5 Projects", "Basic Analytics"], highlighted: false },
+        { name: "Hobby", price: "$9", features: ["5 Projects", "Basic Analytics"], highlighted: false },
         { name: "Pro", price: "$29", features: ["Unlimited Projects", "Advanced Analytics", "Priority Support"], highlighted: true },
         { name: "Enterprise", price: "$99", features: ["Everything in Pro", "SSO / SAML"], highlighted: false },
       ].map((plan) => (
         <div
           key={plan.name}
-          className={\`\${"${classes.card}"} \${"${padding}"} space-y-4 relative \${plan.highlighted ? "border-[var(--color-primary)] ring-1 ring-[var(--color-primary)]/20" : ""}\`}
+          className={\`\${"${classes.card}"} \${"${padding}"} space-y-4 relative \${plan.highlighted ? "border-(--color-primary) ring-1 ring-(--color-primary)/20" : ""}\`}
         >
           {plan.highlighted && (
             <span className="${classes.badge} absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 flex items-center gap-1">
-              <Zap className="w-3 h-3" /> Popular
+              <Icon icon="solar:bolt-bold" className="w-3 h-3"  /> Popular
             </span>
           )}
           <div>
@@ -1262,7 +1262,7 @@ export function PricingCard() {
           <ul className="space-y-2">
             {plan.features.map((f) => (
               <li key={f} className="${classes.text} flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-[var(--color-primary)] shrink-0" />
+                <Icon icon="solar:check-read-bold" className="w-4 h-4 text-(--color-primary) shrink-0"  />
                 {f}
               </li>
             ))}
@@ -1297,7 +1297,7 @@ export function PricingCard() {
     </div>
     <p class="${classes.text} text-sm italic opacity-80">"ComponentForge saved us 40+ hours of design work."</p>
     <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white text-xs font-semibold">
+      <div class="w-9 h-9 rounded-full bg-(--color-primary) flex items-center justify-center text-white text-xs font-semibold">
         S
       </div>
       <div>
@@ -1309,24 +1309,24 @@ export function PricingCard() {
 </div>`;
     }
 
-    return `import { Star } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function TestimonialCard() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full ${font}">
       {[
         { quote: "ComponentForge saved us 40+ hours of design work.", author: "Sarah Chen", role: "Lead Designer" },
-        { quote: "Finally, a tool that understands modern design trends.", author: "Marcus Rivera", role: "Frontend Engineer" },
+        { quote: "Finally, a tool that actually understands modern design aesthetics.", author: "Marcus Rivera", role: "Frontend Engineer" },
       ].map((t) => (
         <div key={t.author} className="${classes.card} ${padding} space-y-4">
           <div className="flex gap-1">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+              <Icon icon="solar:star-bold" key={i} className="w-4 h-4 fill-amber-400 text-amber-400"  />
             ))}
           </div>
           <p className="${classes.text} text-sm italic opacity-80">"{t.quote}"</p>
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white text-xs font-semibold">
+            <div className="w-9 h-9 rounded-full bg-(--color-primary) flex items-center justify-center text-white text-xs font-semibold">
               {t.author.charAt(0)}
             </div>
             <div>
@@ -1352,7 +1352,7 @@ export function TestimonialCard() {
   <div class="${classes.card} ${padding} space-y-2">
     <div class="flex items-center justify-between">
       <!-- Icon: Users -->
-      <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+      <svg class="w-5 h-5 text-(--color-primary)" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
       <span class="text-xs font-medium text-emerald-400">
         +12.3%
       </span>
@@ -1364,7 +1364,7 @@ export function TestimonialCard() {
   <div class="${classes.card} ${padding} space-y-2">
     <div class="flex items-center justify-between">
       <!-- Icon: TrendingUp -->
-      <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+      <svg class="w-5 h-5 text-(--color-primary)" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
       <span class="text-xs font-medium text-emerald-400">
         +8.1%
       </span>
@@ -1376,7 +1376,7 @@ export function TestimonialCard() {
   <div class="${classes.card} ${padding} space-y-2">
     <div class="flex items-center justify-between">
       <!-- Icon: Eye -->
-      <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+      <svg class="w-5 h-5 text-(--color-primary)" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
       <span class="text-xs font-medium text-red-400">
         -2.4%
       </span>
@@ -1388,7 +1388,7 @@ export function TestimonialCard() {
   <div class="${classes.card} ${padding} space-y-2">
     <div class="flex items-center justify-between">
       <!-- Icon: DollarSign -->
-      <svg class="w-5 h-5 text-[var(--color-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <svg class="w-5 h-5 text-(--color-primary)" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
       <span class="text-xs font-medium text-emerald-400">
         +5.7%
       </span>
@@ -1399,7 +1399,7 @@ export function TestimonialCard() {
 </div>`;
     }
 
-    return `import { Users, TrendingUp, Eye, DollarSign } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function StatsRow() {
   return (
@@ -1412,7 +1412,7 @@ export function StatsRow() {
       ].map(({ icon: Icon, label, value, change, up }) => (
         <div key={label} className="${classes.card} ${padding} space-y-2">
           <div className="flex items-center justify-between">
-            <Icon className="w-5 h-5 text-[var(--color-primary)]" />
+            <Icon className="w-5 h-5 text-(--color-primary)" />
             <span className={\`text-xs font-medium \${up ? "text-emerald-400" : "text-red-400"}\`}>
               {change}
             </span>
@@ -1435,7 +1435,7 @@ export function StatsRow() {
 <div class="${classes.card} w-full overflow-hidden ${font}">
   <table class="w-full text-sm">
     <thead>
-      <tr class="border-b border-[var(--color-forge-border)]">
+      <tr class="border-b border-forge-border">
         <th class="${classes.heading} text-left px-4 py-3 text-xs uppercase tracking-wider opacity-70 font-medium">Name</th>
         <th class="${classes.heading} text-left px-4 py-3 text-xs uppercase tracking-wider opacity-70 font-medium">Email</th>
         <th class="${classes.heading} text-left px-4 py-3 text-xs uppercase tracking-wider opacity-70 font-medium">Role</th>
@@ -1443,7 +1443,7 @@ export function StatsRow() {
       </tr>
     </thead>
     <tbody>
-      <tr class="border-b border-[var(--color-forge-border)] hover:bg-white/[0.02] transition-colors">
+      <tr class="border-b border-forge-border hover:bg-white/2 transition-colors">
         <td class="${classes.text} px-4 py-3 font-medium">Alice Johnson</td>
         <td class="${classes.text} px-4 py-3 opacity-60">alice@example.com</td>
         <td class="${classes.text} px-4 py-3">Admin</td>
@@ -1453,7 +1453,7 @@ export function StatsRow() {
           </span>
         </td>
       </tr>
-      <tr class="border-b border-[var(--color-forge-border)] hover:bg-white/[0.02] transition-colors">
+      <tr class="border-b border-forge-border hover:bg-white/2 transition-colors">
         <td class="${classes.text} px-4 py-3 font-medium">Bob Smith</td>
         <td class="${classes.text} px-4 py-3 opacity-60">bob@example.com</td>
         <td class="${classes.text} px-4 py-3">Editor</td>
@@ -1463,7 +1463,7 @@ export function StatsRow() {
           </span>
         </td>
       </tr>
-      <tr class="border-b border-[var(--color-forge-border)] last:border-b-0 hover:bg-white/[0.02] transition-colors">
+      <tr class="border-b border-forge-border last:border-b-0 hover:bg-white/2 transition-colors">
         <td class="${classes.text} px-4 py-3 font-medium">Carol White</td>
         <td class="${classes.text} px-4 py-3 opacity-60">carol@example.com</td>
         <td class="${classes.text} px-4 py-3">Viewer</td>
@@ -1483,7 +1483,7 @@ export function StatsRow() {
     <div className="${classes.card} w-full overflow-hidden ${font}">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-[var(--color-forge-border)]">
+          <tr className="border-b border-forge-border">
             {["Name", "Email", "Role", "Status"].map((h) => (
               <th key={h} className="${classes.heading} text-left px-4 py-3 text-xs uppercase tracking-wider opacity-70 font-medium">
                 {h}
@@ -1497,7 +1497,7 @@ export function StatsRow() {
             { name: "Bob Smith", email: "bob@example.com", role: "Editor", status: "Active" },
             { name: "Carol White", email: "carol@example.com", role: "Viewer", status: "Inactive" },
           ].map((row, i) => (
-            <tr key={i} className="border-b border-[var(--color-forge-border)] last:border-b-0 hover:bg-white/[0.02] transition-colors">
+            <tr key={i} className="border-b border-forge-border last:border-b-0 hover:bg-white/2 transition-colors">
               <td className="${classes.text} px-4 py-3 font-medium">{row.name}</td>
               <td className="${classes.text} px-4 py-3 opacity-60">{row.email}</td>
               <td className="${classes.text} px-4 py-3">{row.role}</td>
@@ -1528,9 +1528,9 @@ export function StatsRow() {
     <button class="w-full flex items-center justify-between text-left cursor-pointer ${padding}">
       <span class="${classes.heading} text-sm">What is ComponentForge?</span>
       <!-- Icon: ChevronDown (rotated) -->
-      <svg class="w-4 h-4 shrink-0 text-[var(--color-forge-muted)] transition-transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+      <svg class="w-4 h-4 shrink-0 text-forge-muted transition-transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
     </button>
-    <div class="border-t border-[var(--color-forge-border)] ${padding}">
+    <div class="border-t border-forge-border ${padding}">
       <p class="${classes.text} text-sm opacity-70">A free tool that generates production-ready Tailwind CSS components.</p>
     </div>
   </div>
@@ -1540,14 +1540,14 @@ export function StatsRow() {
     <button class="w-full flex items-center justify-between text-left cursor-pointer ${padding}">
       <span class="${classes.heading} text-sm">Can I use the code commercially?</span>
       <!-- Icon: ChevronDown -->
-      <svg class="w-4 h-4 shrink-0 text-[var(--color-forge-muted)] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+      <svg class="w-4 h-4 shrink-0 text-forge-muted transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
     </button>
   </div>
 </div>`;
     }
 
     return `import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 export function Accordion() {
   const [open, setOpen] = useState(0);
@@ -1565,10 +1565,10 @@ export function Accordion() {
             className="w-full flex items-center justify-between text-left cursor-pointer ${padding}"
           >
             <span className="${classes.heading} text-sm">{faq.q}</span>
-            <ChevronDown className={\`w-4 h-4 shrink-0 text-[var(--color-forge-muted)] transition-transform \${open === i ? "rotate-180" : ""}\`} />
+            <Icon icon="solar:alt-arrow-down-bold" className={\`w-4 h-4 shrink-0 text-forge-muted transition-transform \${open === i ? "rotate-180" : ""}\`}  />
           </button>
           {open === i && (
-            <div className="border-t border-[var(--color-forge-border)] ${padding}">
+            <div className="border-t border-forge-border ${padding}">
               <p className="${classes.text} text-sm opacity-70">{faq.a}</p>
             </div>
           )}
@@ -1586,7 +1586,7 @@ export function Accordion() {
     if (format === "html") {
       return `<!-- 404 Page -->
 <div class="w-full text-center p-10 space-y-6 ${font}">
-  <p class="text-7xl font-extrabold text-[var(--color-primary)]">404</p>
+  <p class="text-7xl font-extrabold text-(--color-primary)">404</p>
   <h2 class="${classes.heading} text-xl">Page Not Found</h2>
   <p class="${classes.text} text-sm opacity-60 max-w-sm mx-auto">
     The page you're looking for doesn't exist or has been moved.
@@ -1599,18 +1599,18 @@ export function Accordion() {
 </div>`;
     }
 
-    return `import { Home } from "lucide-react";
+    return `import { Icon } from "@iconify/react";
 
 export function NotFoundPage() {
   return (
     <div className="w-full text-center p-10 space-y-6 ${font}">
-      <p className="text-7xl font-extrabold text-[var(--color-primary)]">404</p>
+      <p className="text-7xl font-extrabold text-(--color-primary)">404</p>
       <h2 className="${classes.heading} text-xl">Page Not Found</h2>
       <p className="${classes.text} text-sm opacity-60 max-w-sm mx-auto">
-        The page you're looking for doesn't exist or has been moved.
+        We couldn’t find the page you were looking for. It might have been moved or deleted.
       </p>
       <button className="${classes.button} px-6 py-2.5 text-sm inline-flex items-center gap-2">
-        <Home className="w-4 h-4" />
+        <Icon icon="solar:home-2-bold" className="w-4 h-4"  />
         Back to Home
       </button>
     </div>
@@ -1721,17 +1721,17 @@ import Footer from "./Footer";
 
 export default function LandingPage() {
   return (
-    <div className="w-full bg-[var(--color-background)] ${font}">
+    <div className="w-full bg-(--color-background) ${font}">
       <HeroSection />
       
-      <div className="w-full border-y border-[var(--color-forge-border)] bg-[var(--color-surface)] py-20">
+      <div className="w-full border-y border-forge-border bg-(--color-surface) py-20">
         <div className="max-w-7xl mx-auto px-4">
            <div className="text-center mb-16">
-             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-forge-text)] mb-4">
+             <h2 className="text-3xl md:text-4xl font-bold text-forge-text mb-4">
                Everything you need to ship.
              </h2>
-             <p className="text-[var(--color-forge-muted)] max-w-2xl mx-auto">
-               Our comprehensive toolkit provides the foundation you need to build scalable, beautiful applications.
+             <p className="text-forge-muted max-w-2xl mx-auto font-medium">
+               A high-performance toolkit for teams that value design engineering. Everything you need to ship world-class interfaces.
              </p>
            </div>
            <BentoGrid />
@@ -1740,7 +1740,7 @@ export default function LandingPage() {
 
       <div className="max-w-7xl mx-auto px-4 py-20">
          <div className="text-center mb-16">
-           <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-forge-text)] mb-4">
+           <h2 className="text-3xl md:text-4xl font-bold text-forge-text mb-4">
              Loved by thousands of developers.
            </h2>
          </div>
@@ -1750,7 +1750,7 @@ export default function LandingPage() {
       <div className="py-20 text-center">
         <h2 className="text-2xl font-bold mb-6">Ready to get started?</h2>
         <button className="${classes.button} px-8 py-3 rounded-lg text-sm font-medium">
-          Create your first project
+          Launch your first project
         </button>
       </div>
 
@@ -1772,8 +1772,8 @@ import Alert from "./Alert";
 
 export default function DashboardPage() {
   return (
-    <div className="w-full min-h-screen flex bg-[var(--color-background)] ${font}">
-      <div className="w-64 shrink-0 hidden md:block border-r border-[var(--color-forge-border)]">
+    <div className="w-full min-h-screen flex bg-(--color-background) ${font}">
+      <div className="w-64 shrink-0 hidden md:block border-r border-forge-border">
         <SidebarNav />
       </div>
       
@@ -1782,9 +1782,9 @@ export default function DashboardPage() {
         
         <main className="p-6 space-y-6 overflow-y-auto">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-[var(--color-forge-text)]">Dashboard</h1>
+            <h1 className="text-2xl font-black tracking-tight text-forge-text">Dashboard</h1>
             <div className="flex gap-2">
-               <button className="px-4 py-2 bg-[var(--color-primary)] text-white rounded text-sm font-medium">New Project</button>
+               <button className="px-4 py-2 bg-(--color-primary) text-white rounded text-sm font-bold shadow-lg shadow-(--color-primary)/20">New Project</button>
             </div>
           </div>
 
@@ -1792,12 +1792,12 @@ export default function DashboardPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-4">
-              <h3 className="text-lg font-semibold text-[var(--color-forge-text)]">Recent Activity</h3>
+              <h3 className="text-lg font-semibold text-forge-text">Recent Activity</h3>
               <Table />
             </div>
             
             <div className="space-y-4">
-               <h3 className="text-lg font-semibold text-[var(--color-forge-text)]">Notifications</h3>
+               <h3 className="text-lg font-bold tracking-tight text-forge-text">Updates</h3>
                <Alert />
             </div>
           </div>
@@ -1815,7 +1815,7 @@ export default function DashboardPage() {
 
     return `export default function AuthPage() {
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-[var(--color-background)] p-4 ${font}">
+    <div className="w-full min-h-screen flex items-center justify-center bg-(--color-background) p-4 ${font}">
       <div className="${classes.card} w-full max-w-md p-8 space-y-6">
         <div className="text-center space-y-2">
           <h1 className="${classes.heading} text-2xl">Welcome back</h1>
@@ -1825,22 +1825,22 @@ export default function DashboardPage() {
         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="space-y-4">
              <div className="space-y-1">
-               <label className="text-sm font-medium text-[var(--color-forge-text)]">Email</label>
+               <label className="text-sm font-medium text-forge-text">Email</label>
                <input type="email" placeholder="name@example.com" className="${classes.input} w-full" />
              </div>
 
              <div className="space-y-1">
                <div className="flex justify-between">
-                 <label className="text-sm font-medium text-[var(--color-forge-text)]">Password</label>
-                 <a href="#" className="text-sm text-[var(--color-primary)] hover:underline">Forgot password?</a>
+                 <label className="text-sm font-medium text-forge-text">Password</label>
+                 <a href="#" className="text-sm text-(--color-primary) hover:underline font-medium">Forgot password?</a>
                </div>
                <input type="password" className="${classes.input} w-full" />
              </div>
           </div>
 
           <div className="flex items-center gap-2">
-             <input type="checkbox" className="rounded border-[var(--color-forge-border)]" />
-             <span className="text-sm text-[var(--color-forge-text)] opacity-80">Remember me</span>
+             <input type="checkbox" className="rounded border-forge-border" />
+             <span className="text-sm text-forge-text opacity-80">Remember me</span>
           </div>
 
           <button className="${classes.button} w-full py-2.5 justify-center">
@@ -1850,10 +1850,10 @@ export default function DashboardPage() {
 
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-[var(--color-forge-border)]" />
+            <span className="w-full border-t border-forge-border" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-[var(--color-forge-panel)] px-2 text-[var(--color-forge-muted)]">
+            <span className="bg-forge-panel px-2 text-forge-muted">
               Or continue with
             </span>
           </div>
@@ -1868,8 +1868,8 @@ export default function DashboardPage() {
            </button>
         </div>
 
-        <p className="text-center text-sm text-[var(--color-forge-text)] opacity-60">
-          Don't have an account? <a href="#" className="text-[var(--color-primary)] hover:underline">Sign up</a>
+        <p className="text-center text-sm text-forge-text opacity-60">
+          Don't have an account? <a href="#" className="text-(--color-primary) hover:underline">Sign up</a>
         </p>
       </div>
     </div>

@@ -20,8 +20,8 @@
   --color-forge-muted: oklch(0.5 0.03 270);
   --color-forge-text: oklch(0.98 0.005 240);
   --color-forge-white: oklch(0.99 0 180);
-  --color-brand: oklch(0.718 0.113 269.854);
-  --color-brand-secondary: oklch(0.749 0.1 270.243);
+  --color-brand: oklch(0.7 0.12 180);
+  --color-brand-secondary: oklch(0.7 0.15 150);
 
   /* ── Radius Tokens ── */
   --radius-theme-none: 0px;
@@ -41,7 +41,7 @@
   /* Aurora Contrast palette — high energy + minimal */
   --color-primary: oklch(0.8 0.12 180); /* Vibrant Teal      */
   --color-secondary: oklch(0.8 0.15 150); /* Emerald Green     */
-  --color-accent: oklch(0.7 0.2 30); /* Ember Red/Orange  */
+  --color-accent: oklch(0.8 0.15 80); /* Warm Amber/Gold */
   --color-surface: oklch(0.226 0.019 280.253);
   --color-surface-dark: oklch(0.18 0.014 285);
 }

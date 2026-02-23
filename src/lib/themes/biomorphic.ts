@@ -1,11 +1,11 @@
 import type { ThemeDefinition } from "../../types/theme";
-import { Sprout } from "lucide-react";
+
 
 export const biomorphic: ThemeDefinition = {
   id: "biomorphic",
   label: "Biomorphic",
   description: "Organic shapes and fluid forms",
-  icon: Sprout,
+  icon: "solar:stars-bold-duotone",
   font: "var(--font-round)",
   generate: () => ({
     wrapper: `bg-[#1a2c20] text-[#e0eecd] rounded-[30px_50px_30px_50px] border-2 border-[#8ba888]/20 p-6 shadow-xl`,

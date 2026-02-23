@@ -15,13 +15,11 @@ export interface ThemeParams {
   border: string;
 }
 
-import type { LucideIcon } from "lucide-react";
-
 export interface ThemeDefinition {
   id: string;
   label: string;
   description: string;
-  icon: LucideIcon;
+  icon: string;
   font: string; // The preferred font family variable (e.g., 'var(--font-mono)')
   generate: (params: ThemeParams) => ThemeClasses;
 }

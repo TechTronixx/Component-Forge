@@ -1,11 +1,11 @@
 import type { ThemeDefinition, ThemeParams } from "../../types/theme";
-import { Map } from "lucide-react";
+
 
 export const cartographer: ThemeDefinition = {
   id: "cartographer",
   label: "Cartographer",
   description: "Spatial interfaces with dot grids",
-  icon: Map,
+  icon: "solar:map-bold-duotone",
   font: "var(--font-spatial)",
   generate: ({ radius }: ThemeParams) => ({
     wrapper: `bg-[var(--color-forge-dark)] ${radius} border border-[var(--color-forge-border)] [background-image:radial-gradient(var(--color-forge-border)_1px,transparent_1px)] [background-size:20px_20px]`,
