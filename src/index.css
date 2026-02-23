@@ -13,15 +13,15 @@
   --font-round: "Quicksand", sans-serif;
 
   /* ── Brand Colors (static tokens) ── */
-  --color-forge-black: #0a0a0f;
-  --color-forge-dark: #111118;
-  --color-forge-panel: #16161e;
-  --color-forge-border: #2a2a3a;
-  --color-forge-muted: #6b6b80;
-  --color-forge-text: #e4e4ed;
-  --color-forge-white: #fafafe;
-  --color-brand: #6366f1;
-  --color-brand-secondary: #4f46e5;
+  --color-forge-black: oklch(0.203 0.014 285.102);
+  --color-forge-dark: oklch(0.18 0.014 285);
+  --color-forge-panel: oklch(0.226 0.019 280.253);
+  --color-forge-border: oklch(0.396 0.036 278.297);
+  --color-forge-muted: oklch(0.5 0.03 270);
+  --color-forge-text: oklch(0.98 0.005 240);
+  --color-forge-white: oklch(0.99 0 180);
+  --color-brand: oklch(0.718 0.113 269.854);
+  --color-brand-secondary: oklch(0.749 0.1 270.243);
 
   /* ── Radius Tokens ── */
   --radius-theme-none: 0px;
@@ -38,11 +38,12 @@
 
 /* ── Dynamic Theme Variables (overridden by JS) ── */
 :root {
-  --color-primary: #6366f1;
-  --color-secondary: #f163d2;
-  --color-accent: #63f1a5;
-  --color-surface: #1e1e2e;
-  --color-surface-dark: #0f0f1a;
+  /* Aurora Contrast palette — high energy + minimal */
+  --color-primary: oklch(0.8 0.12 180); /* Vibrant Teal      */
+  --color-secondary: oklch(0.8 0.15 150); /* Emerald Green     */
+  --color-accent: oklch(0.7 0.2 30); /* Ember Red/Orange  */
+  --color-surface: oklch(0.226 0.019 280.253);
+  --color-surface-dark: oklch(0.18 0.014 285);
 }
 
 /* ── Base Styles ── */

@@ -1,22 +1,33 @@
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 import {
+  Star,
+  ArrowRight,
   Sparkles,
   Layers,
   Palette,
   Code2,
-  ArrowRight,
   Zap,
   Monitor,
   Smartphone,
 } from "lucide-react";
+
+/* ─────────────────────────────────────────────
+   Data
+───────────────────────────────────────────── */
+const NAV_LINKS = [
+  { label: "Home", href: "#" },
+  { label: "Features", href: "#features" },
+  { label: "Styles", href: "#archetypes" },
+  { label: "Docs", href: "#" },
+];
 
 const ARCHETYPES = [
   {
     id: "glass",
     label: "Spatial Glass",
     desc: "Frosted layers, depth, luminance",
-    gradient: "from-blue-500/20 via-purple-500/10 to-cyan-500/20",
+    gradient: "from-blue-500/20 via-indigo-500/10 to-blue-400/20",
     border: "border-white/15",
     preview: "backdrop-blur-xl bg-white/5",
   },
@@ -33,7 +44,7 @@ const ARCHETYPES = [
     id: "bento",
     label: "Fluid Bento",
     desc: "Soft grids, gentle radius, modern clean",
-    gradient: "from-emerald-500/20 via-teal-500/10 to-green-500/20",
+    gradient: "from-slate-500/20 via-blue-500/10 to-slate-400/20",
     border: "border-white/10",
     preview: "bg-white/5 rounded-2xl border border-white/10",
   },
@@ -41,7 +52,7 @@ const ARCHETYPES = [
     id: "swiss",
     label: "Corporate Swiss",
     desc: "Typography-driven, sharp, kinetic",
-    gradient: "from-red-500/20 via-white/5 to-neutral-500/20",
+    gradient: "from-neutral-500/20 via-white/5 to-slate-500/20",
     border: "border-white/10",
     preview: "bg-transparent border-b-2 border-white/30",
   },
@@ -80,22 +91,25 @@ const FEATURES = [
   },
 ];
 
+/* ─────────────────────────────────────────────
+   Motion Variants
+───────────────────────────────────────────── */
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
 };
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
   },
 };
 
 const scaleIn = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.92 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -103,107 +117,204 @@ const scaleIn = {
   },
 };
 
+/* ─────────────────────────────────────────────
+   Component
+───────────────────────────────────────────── */
 export default function Landing() {
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* ── Gradient Mesh Background ── */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[var(--color-forge-black)]" />
-        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[var(--color-primary)]/8 blur-[120px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--color-secondary)]/6 blur-[100px]" />
-        <div className="absolute top-[40%] right-[20%] w-[30%] h-[30%] rounded-full bg-[var(--color-accent)]/5 blur-[80px]" />
-      </div>
+    <div className="min-h-screen bg-forge-black text-white overflow-x-hidden">
+      {/* ══════════════════════════════════════
+          HERO  (full-viewport)
+      ══════════════════════════════════════ */}
+      <section className="relative min-h-screen flex flex-col overflow-hidden">
+        {/* ── Abstract blob background ── */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-forge-black" />
 
-      {/* ── Navbar ── */}
-      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/5">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-white" />
-          </div>
-          <span className="font-[family-name:var(--font-display)] text-lg font-bold text-white tracking-tight">
-            ComponentForge
-          </span>
+          {/* Luminous Aurora blob — right side */}
+          <div
+            className="absolute -right-[10%] top-[5%] w-[70%] h-[90%] opacity-80"
+            style={{
+              background: `
+                radial-gradient(ellipse 60% 80% at 65% 40%,
+                  oklch(0.8 0.12 180) 0%,
+                  oklch(0.8 0.15 150) 30%,
+                  oklch(0.7 0.2 30) 65%,
+                  transparent 100%)
+              `,
+              filter: "blur(48px)",
+              borderRadius: "40% 60% 55% 45% / 50% 40% 60% 50%",
+              transform: "rotate(-15deg)",
+            }}
+          />
+          {/* secondary depth layer — Emerald glow */}
+          <div
+            className="absolute right-[8%] top-[20%] w-[50%] h-[60%] mix-blend-screen opacity-50"
+            style={{
+              background: `
+                radial-gradient(ellipse 50% 70% at 55% 45%,
+                  oklch(0.8 0.15 150) 0%,
+                  oklch(0.7 0.2 30) 40%,
+                  transparent 80%)
+              `,
+              filter: "blur(64px)",
+              borderRadius: "55% 45% 40% 60% / 45% 55% 50% 50%",
+              transform: "rotate(10deg)",
+            }}
+          />
+          {/* Vignette — left-to-right so headline stays legible */}
+          <div className="absolute inset-0 bg-linear-to-r from-forge-black via-forge-black/75 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-forge-black via-transparent to-forge-black/30" />
         </div>
-        <Link
-          to="/studio"
-          className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 hover:text-white transition-all"
-        >
-          Open Studio
-          <ArrowRight className="w-3.5 h-3.5" />
-        </Link>
-      </nav>
 
-      {/* ── Hero ── */}
-      <motion.section
-        variants={stagger}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 max-w-5xl mx-auto px-6 pt-24 pb-20 text-center"
-      >
-        <motion.div variants={fadeUp} className="mb-6">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 text-[var(--color-primary)] text-xs font-medium tracking-wider uppercase">
-            <Sparkles className="w-3 h-3" />
-            The 2026 Semantic UI Generator
-          </span>
-        </motion.div>
+        {/* ── Pill Navbar ── */}
+        <nav className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
+          {/* Logo */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-(--color-primary) to-(--color-secondary) flex items-center justify-center shadow-lg shadow-(--color-primary)/30">
+              <Sparkles className="w-4 h-4 text-white" />
+            </div>
+            <span
+              className="text-base font-bold text-white tracking-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              ComponentForge
+            </span>
+          </div>
 
-        <motion.h1
-          variants={fadeUp}
-          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-800 text-white leading-[0.95] tracking-tight mb-6"
-        >
-          Generate UI.
-          <br />
-          <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)] bg-clip-text text-transparent">
-            With ease!
-          </span>
-        </motion.h1>
+          {/* Center nav */}
+          <div className="hidden md:flex items-center gap-1 px-2 py-1.5 rounded-full bg-white/6 border border-white/10 backdrop-blur-md">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="px-4 py-1.5 rounded-full text-sm text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
 
-        <motion.p
-          variants={fadeUp}
-          className="max-w-xl mx-auto text-base md:text-lg text-[var(--color-forge-muted)] leading-relaxed mb-10"
-        >
-          A curated engine for crafting production-ready UI. Select an
-          aesthetic. Refine the parameters. Export clean code.
-        </motion.p>
+          {/* Right actions */}
+          <div className="flex items-center gap-3">
+            <Link
+              to="/studio"
+              className="hidden sm:block text-sm text-white/65 hover:text-white transition-colors"
+            >
+              Sign up
+            </Link>
+            <Link
+              to="/studio"
+              className="flex items-center gap-1.5 px-5 py-2 rounded-full bg-white text-forge-black text-sm font-semibold hover:bg-white/90 transition-all shadow-lg"
+            >
+              Open Studio
+            </Link>
+          </div>
+        </nav>
 
+        {/* ── Hero Content ── */}
         <motion.div
-          variants={fadeUp}
-          className="flex gap-4 justify-center flex-wrap"
+          variants={stagger}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 flex flex-col items-center justify-center flex-1 px-6 text-center pb-24 pt-8"
         >
-          <Link
-            to="/studio"
-            className="group flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[var(--color-primary)] text-white font-semibold text-sm hover:opacity-90 transition-all shadow-lg shadow-[var(--color-primary)]/25"
-          >
-            Start Generating
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-          <a
-            href="#archetypes"
-            className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white/80 font-medium text-sm hover:bg-white/10 hover:text-white transition-all"
-          >
-            See the Vibes
-          </a>
-        </motion.div>
-      </motion.section>
+          {/* Trust badge */}
+          <motion.div variants={fadeUp} className="mb-8">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/8 border border-white/15 text-white/75 text-xs font-medium backdrop-blur-sm">
+              <Star className="w-3.5 h-3.5 fill-(--color-primary) text-(--color-primary)" />
+              Trusted by designers &amp; developers globally
+            </span>
+          </motion.div>
 
-      {/* ── Archetype Cards ── */}
+          {/* Headline */}
+          <motion.h1
+            variants={fadeUp}
+            className="max-w-4xl leading-none tracking-tight mb-6"
+            style={{ fontSize: "clamp(3rem, 8vw, 6.5rem)" }}
+          >
+            <span
+              className="block font-black text-white"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Design Beautiful.
+            </span>
+            <span className="block">
+              <span
+                className="font-black text-white"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Ship{" "}
+              </span>
+              <span
+                className="italic font-bold bg-linear-to-r from-(--color-primary) via-(--color-secondary) to-(--color-accent) bg-clip-text text-transparent"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Faster.
+              </span>
+            </span>
+          </motion.h1>
+
+          {/* Sub-copy */}
+          <motion.p
+            variants={fadeUp}
+            className="max-w-md text-base md:text-lg text-white/50 leading-relaxed mb-10"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            ComponentForge helps teams craft production-ready UI select an
+            aesthetic, tune the parameters, export clean code.
+          </motion.p>
+
+          {/* CTA */}
+          <motion.div
+            variants={fadeUp}
+            className="flex items-center gap-4 flex-wrap justify-center"
+          >
+            <Link
+              to="/studio"
+              className="group flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-forge-black font-semibold text-sm hover:bg-white/90 transition-all shadow-xl"
+            >
+              Start Generating
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+            <a
+              href="#archetypes"
+              className="text-sm text-white/45 hover:text-white/75 transition-colors underline underline-offset-4"
+            >
+              See the styles
+            </a>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          ARCHETYPE CARDS
+      ══════════════════════════════════════ */}
       <motion.section
         id="archetypes"
         variants={stagger}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative z-10 max-w-6xl mx-auto px-6 py-20"
+        className="relative z-10 max-w-6xl mx-auto px-6 py-24"
       >
         <motion.h2
           variants={fadeUp}
-          className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white text-center mb-4"
+          className="font-black text-white text-center mb-4 text-3xl md:text-5xl tracking-tight"
+          style={{ fontFamily: "var(--font-display)" }}
         >
-          Four Vibes. Infinite Components.
+          Four Vibes.{" "}
+          <span
+            className="italic font-bold bg-linear-to-r from-(--color-primary) via-(--color-secondary) to-(--color-accent) bg-clip-text text-transparent"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Infinite
+          </span>{" "}
+          Components.
         </motion.h2>
         <motion.p
           variants={fadeUp}
-          className="text-center text-[var(--color-forge-muted)] mb-14 max-w-lg mx-auto"
+          className="text-center text-forge-muted mb-14 max-w-lg mx-auto text-base"
         >
           Each archetype defines a complete visual language — borders, shadows,
           backgrounds, and motion patterns.
@@ -214,14 +325,17 @@ export default function Landing() {
             <motion.div key={arch.id} variants={scaleIn}>
               <Link
                 to="/studio"
-                className={`group block p-6 rounded-2xl bg-gradient-to-br ${arch.gradient} border ${arch.border} backdrop-blur-sm hover:scale-[1.03] transition-transform duration-300`}
+                className={`group block p-6 rounded-2xl bg-linear-to-br ${arch.gradient} border ${arch.border} backdrop-blur-sm hover:scale-[1.03] transition-transform duration-300`}
               >
                 <div
                   className={`w-full h-28 mb-5 ${arch.preview} rounded-lg flex items-center justify-center`}
                 >
                   <div className="w-20 h-6 rounded bg-white/20" />
                 </div>
-                <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold text-white mb-1">
+                <h3
+                  className="text-lg font-semibold text-white mb-1"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
                   {arch.label}
                 </h3>
                 <p className="text-sm text-white/50">{arch.desc}</p>
@@ -231,17 +345,21 @@ export default function Landing() {
         </div>
       </motion.section>
 
-      {/* ── Features Grid ── */}
+      {/* ══════════════════════════════════════
+          FEATURES GRID
+      ══════════════════════════════════════ */}
       <motion.section
+        id="features"
         variants={stagger}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative z-10 max-w-5xl mx-auto px-6 py-20"
+        className="relative z-10 max-w-5xl mx-auto px-6 py-24"
       >
         <motion.h2
           variants={fadeUp}
-          className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white text-center mb-14"
+          className="font-black text-white text-center mb-14 text-3xl md:text-5xl tracking-tight"
+          style={{ fontFamily: "var(--font-display)" }}
         >
           Everything You Need
         </motion.h2>
@@ -250,24 +368,27 @@ export default function Landing() {
             <motion.div
               key={f.title}
               variants={scaleIn}
-              className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/10 transition-colors"
+              className="p-6 rounded-2xl bg-white/3 border border-white/6 hover:border-white/10 hover:bg-white/5 transition-all duration-300"
             >
-              <f.icon className="w-8 h-8 text-[var(--color-primary)] mb-4" />
-              <h3 className="font-[family-name:var(--font-display)] text-white font-semibold mb-1.5">
+              <f.icon className="w-7 h-7 text-(--color-primary) mb-4" />
+              <h3
+                className="text-white font-semibold mb-1.5"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 {f.title}
               </h3>
-              <p className="text-sm text-[var(--color-forge-muted)]">
-                {f.desc}
-              </p>
+              <p className="text-sm text-forge-muted">{f.desc}</p>
             </motion.div>
           ))}
         </div>
       </motion.section>
 
-      {/* ── Footer ── */}
+      {/* ══════════════════════════════════════
+          FOOTER
+      ══════════════════════════════════════ */}
       <footer className="relative z-10 border-t border-white/5 py-8 text-center">
-        <p className="text-sm text-[var(--color-forge-muted)]">
-          ComponentForge © 2026 · Built with React, Tailwind CSS, and Framer
+        <p className="text-sm text-forge-muted">
+          ComponentForge © 2026 · Built with React, Tailwind CSS &amp; Framer
           Motion
         </p>
       </footer>
